@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     if vim.v.shell_error ~= 0 then
         vim.api.nvim_echo({
             { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out, "WarningMsg" },
+            { out,                            "WarningMsg" },
             { "\nPress any key to exit..." },
         }, true, {})
         vim.fn.getchar()
@@ -24,13 +24,14 @@ local plugins = {
     -- automatically check for plugin updates
     checker = { enabled = true },
 
-    {'nvim-telescope/telescope.nvim',  version = '0.1.8', dependencies = {'nvim-lua/plenary.nvim'}},
+    { 'nvim-telescope/telescope.nvim', version = '0.1.8',  dependencies = { 'nvim-lua/plenary.nvim' } },
 
-    { "rose-pine/nvim", name = "rose-pine" },
+    { "rose-pine/nvim",                name = "rose-pine" },
 
-    { "catppuccin/nvim", name = "catppuccin" },
+    { "catppuccin/nvim",               name = "catppuccin" },
 
-    'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
 
     'ThePrimeagen/harpoon',
 
@@ -42,14 +43,14 @@ local plugins = {
         branch = 'v2.x', -- or 'main' for the latest stable version
         dependencies = {
             -- LSP support
-            {'neovim/nvim-lspconfig'},   -- Required
-            {'williamboman/mason.nvim'}, -- Optional, for managing LSP servers
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional, for Mason integration
+            { 'neovim/nvim-lspconfig' },             -- Required
+            { 'williamboman/mason.nvim' },           -- Optional, for managing LSP servers
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional, for Mason integration
             -- Autocompletion support
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'L3MON4D3/LuaSnip'},
-            {'saadparwaiz1/cmp_luasnip'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'L3MON4D3/LuaSnip' },
+            { 'saadparwaiz1/cmp_luasnip' },
         }
     },
 
@@ -62,7 +63,17 @@ local plugins = {
     },
 
     'numToStr/Comment.nvim',
-    'tpope/vim-fugitive'
+    'tpope/vim-fugitive',
+    'lewis6991/gitsigns.nvim',
+
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+
+    'MunifTanjim/nui.nvim',
+    'VonHeikemen/fine-cmdline.nvim',
+    'VonHeikemen/searchbox.nvim',
 }
 
 require("lazy").setup(plugins, {})
