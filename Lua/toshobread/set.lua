@@ -19,13 +19,13 @@ vim.opt.backup = false
 vim.opt.undodir = vim.fn.expand("~") .. "\\.vim\\undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 10
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes:1"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
@@ -34,3 +34,12 @@ vim.opt.colorcolumn = "0"
 
 --vim.opt.clipboard = "unnamedplus"
 vim.api.nvim_set_option("clipboard", "unnamedplus")
+
+--Set default terminal to powershell-core
+vim.opt.shell = "pwsh"
+vim.opt.shellcmdflag =
+"-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+vim.opt.shellquote = ""
+vim.opt.shellxquote = ""
