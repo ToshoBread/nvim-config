@@ -3,18 +3,17 @@ require("toshobread.set")
 -- Go to netrw explorer
 vim.keymap.set("n", "<leader>ee", vim.cmd.Ex)
 
--- Open terminal
-vim.keymap.set("n", "<leader>tr", ":vnew<CR>:terminal<CR>")
-
 -- Save and format the file with cursor position restoration
 vim.keymap.set("n", "<leader>sf", function()
-	-- Format the file
-	vim.lsp.buf.format()
+    -- Format the file
+    vim.lsp.buf.format()
 
-	-- Save/Write the file
-	vim.api.nvim_command("w")
+    -- Save/Write the file
+    vim.api.nvim_command("w")
 end)
 
+-- Select the whole file
+vim.keymap.set("n", "<leader><C-a>", "ggvG")
 -- Quit
 vim.keymap.set("n", "<leader>qq", ":q<CR>")
 
