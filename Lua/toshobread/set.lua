@@ -42,3 +42,6 @@ vim.opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
 vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
 vim.opt.shellquote = ""
 vim.opt.shellxquote = ""
+
+-- Excludes jsregexp from luasnip requirements
+vim.g.luasnip_load_jsregexp = 0
