@@ -1,6 +1,7 @@
 local key = vim.keymap
+local builtin = require("telescope.builtin")
 
--- Go to netrw explorer
+-- Return to netrw
 key.set("n", "<leader>ee", vim.cmd.Ex)
 
 -- Write file
@@ -28,3 +29,7 @@ key.set("n", "N", "Nzzzv")
 
 -- Delete previous word in insert mode
 key.set("i", "<C-H>", "<C-O>db")
+
+-- Telescope
+key.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+key.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope live grep" })
