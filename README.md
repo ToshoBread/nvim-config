@@ -1,22 +1,21 @@
-# My Neovim plugins, preferences, and configurations
+# My Neovim Config
 
----
+[![](https://skillicons.dev/icons?i=neovim)](https://neovim.io/)
 
-## Plugin Manager: [Lazy.nvim](https://github.com/folke/lazy.nvim.git)
+### Plugin Manager: [Lazy.nvim](https://github.com/folke/lazy.nvim.git)
 
-## Package Manager: [Mason](https://github.com/williamboman/mason.nvim)
+### Package Manager: [Mason](https://github.com/williamboman/mason.nvim)
 
-## Parsing System: [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+### Parsing System: [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
----
+<br>
 
-## Configured Languages:
+### Configured Languages:
 
-- Lua
-- Python
-- Java
-
----
+[![](https://skillicons.dev/icons?i=lua)](https://lua.org/)
+[![](https://skillicons.dev/icons?i=python)](https://www.python.org/)
+[![](https://skillicons.dev/icons?i=java)](https://www.java.com/)
+<br>
 
 ## Plugins:
 
@@ -58,6 +57,6 @@
 - [Surround](https://github.com/kylechui/nvim-surround)
 - [Autopairs](https://github.com/windp/nvim-autopairs)
 
----
+<br>
 
 ##### Note: some plugin dependencies were not stated in this README as they are already required by their respective plugin.
