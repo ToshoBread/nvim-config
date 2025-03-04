@@ -1,20 +1,20 @@
-# My Neovim Config
+<div><h1 align="center">My Neovim Config</h1></div>
 
 [![](https://skillicons.dev/icons?i=neovim)](https://neovim.io/)
 
-### Plugin Manager: [Lazy.nvim](https://github.com/folke/lazy.nvim.git)
+## Core
 
-### Package Manager: [Mason](https://github.com/williamboman/mason.nvim)
+- Plugin Manager: [Lazy.nvim](https://github.com/folke/lazy.nvim.git)
+- Package Manager: [Mason](https://github.com/williamboman/mason.nvim)
+- Parser: [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+  <br>
 
-### Parsing System: [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+## Configured Languages:
 
-<br>
-
-### Configured Languages:
-
-[![](https://skillicons.dev/icons?i=lua)](https://lua.org/)
-[![](https://skillicons.dev/icons?i=python)](https://www.python.org/)
-[![](https://skillicons.dev/icons?i=java)](https://www.java.com/)
+[![Lua](https://skillicons.dev/icons?i=lua)](https://lua.org/)
+[![Python](https://skillicons.dev/icons?i=python)](https://www.python.org/)
+[![Java](https://skillicons.dev/icons?i=java)](https://www.java.com/)
+[![Java](https://skillicons.dev/icons?i=bash)](https://www.gnu.org/software/bash/)
 <br>
 
 ## Plugins:
@@ -28,6 +28,7 @@
 
 - [Undotree](https://github.com/mbbill/undotree)
 - [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
+- [Peek](https://github.com/toppair/peek.nvim)
 
 ### LSP, Autocompletion, & Formatting
 
