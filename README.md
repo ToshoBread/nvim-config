@@ -14,7 +14,8 @@
 [![Lua](https://skillicons.dev/icons?i=lua)](https://lua.org/)
 [![Python](https://skillicons.dev/icons?i=python)](https://www.python.org/)
 [![Java](https://skillicons.dev/icons?i=java)](https://www.java.com/)
-[![Java](https://skillicons.dev/icons?i=bash)](https://www.gnu.org/software/bash/)
+[![Bash](https://skillicons.dev/icons?i=bash)](https://www.gnu.org/software/bash/)
+[![Markdown](https://skillicons.dev/icons?i=md)](https://www.gnu.org/software/bash/)
 <br>
 
 ## Plugins:
@@ -36,7 +37,6 @@
 - [Mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 - [Mason-tool-installer](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
 - [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- [Cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [Cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
 - [Friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
@@ -57,6 +57,7 @@
 - [Commentary](https://github.com/tpope/vim-commentary)
 - [Surround](https://github.com/kylechui/nvim-surround)
 - [Autopairs](https://github.com/windp/nvim-autopairs)
+- [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 
 <br>
 

@@ -60,14 +60,13 @@ local plugins = {
             "folke/neodev.nvim",
         },
     },
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    { "L3MON4D3/LuaSnip",        dependencies = "rafamadriz/friendly-snippets" },
+    { "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-cmdline", "hrsh7th/cmp-buffer" } },
+    { "L3MON4D3/LuaSnip", dependencies = "rafamadriz/friendly-snippets" },
     "saadparwaiz1/cmp_luasnip",
     { "nvimtools/none-ls.nvim",  dependencies = "nvimtools/none-ls-extras.nvim" },
     { "mfussenegger/nvim-jdtls", ft = "java" },
 
-    -- Git Integration
+    -- Git
     "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",
 
