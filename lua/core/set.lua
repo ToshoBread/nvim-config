@@ -1,49 +1,50 @@
-local opt = vim.opt
-
 vim.g.mapleader = " "
 
-opt.guicursor = "n-v-c-sm:ver25-blinkon1,i-ci-ve:ver25-blinkon1,r-cr-o:ver25-blinkon1"
+vim.opt.guicursor = "v-c-sm:ver25-blinkon1,i-ci-ve:ver25-blinkon1,r-cr-o:ver25-blinkon1"
+vim.opt.mouse = ""
 
-opt.nu = true
-opt.relativenumber = true
+vim.scriptencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+-- vim.opt.fileencoding = "utf-8"
 
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
-opt.expandtab = true
+vim.opt.nu = true
+vim.opt.relativenumber = true
 
-opt.smartindent = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
-opt.wrap = false
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.breakindent = true
+vim.opt.smarttab = true
+vim.opt.backspace = { "start", "eol", "indent" }
 
-opt.swapfile = false
-opt.backup = false
-opt.undodir = vim.fn.expand("~") .. "\\.vim\\undodir"
-opt.undofile = true
+vim.opt.wrap = false
 
-opt.hlsearch = false
-opt.incsearch = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = vim.fn.expand("~") .. "\\.vim\\undodir"
+vim.opt.undofile = true
 
-opt.termguicolors = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
 
-opt.scrolloff = 10
-opt.signcolumn = "yes"
-opt.isfname:append("@-@")
+vim.opt.termguicolors = true
 
-opt.updatetime = 60
+vim.opt.scrolloff = 10
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+vim.opt.colorcolumn = "0"
+vim.opt.cmdheight = 0
+vim.opt.laststatus = 0
 
-opt.colorcolumn = "0"
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
-vim.api.nvim_set_option("clipboard", "unnamedplus")
-
---Set default terminal to powershell-core
-opt.shell = "pwsh"
-opt.shellcmdflag =
-"-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-opt.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-opt.shellquote = ""
-opt.shellxquote = ""
+vim.opt.updatetime = 60
 
 -- Excludes jsregexp from luasnip requirements
 vim.g.luasnip_load_jsregexp = 0
