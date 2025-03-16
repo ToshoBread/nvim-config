@@ -27,8 +27,8 @@ require("incline").setup({
 		local modified = vim.bo[props.buf].modified
 		local buffer = {
 			-- guifg = helpers.contrast_color(ft_color)
-			{ filename, " ", gui = modified and "bold, italic" or "bold" },
 			{ (ft_icon or ""), " ", guibg = ft_color, guifg = ft_color },
+			{ filename, gui = modified and "bold, italic" or "bold" },
 			guibg = "", -- Color
 		}
 		return buffer

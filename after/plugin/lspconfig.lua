@@ -72,6 +72,8 @@ fidget.setup({
 	},
 })
 
+-- Additional LSP Specs
+
 lspconfig.lua_ls.setup({
 	settings = {
 		Lua = {
@@ -80,6 +82,18 @@ lspconfig.lua_ls.setup({
 			},
 		},
 	},
+
+	root_dir = function(fname)
+		local util = require("lspconfig.util")
+
+		local root = util.root_pattern("package.json", ".git", ".luarc.json", ".luacheckrc", ".stylua.toml")(fname)
+
+		if root and root:match("%.wezterm$") then
+			return vim.fn.fnamemodify(fname, ":h")
+		end
+
+		return root or vim.fn.fnamemodify(fname, ":h")
+	end,
 })
 
 lspconfig.pylsp.setup({
