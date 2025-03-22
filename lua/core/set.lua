@@ -9,6 +9,7 @@ vim.opt.encoding = "utf-8"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.fillchars = { eob = " " }
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
