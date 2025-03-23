@@ -3,7 +3,7 @@ local jdtls = require("jdtls")
 local home = vim.env.USERPROFILE or vim.env.HOME -- Get the home directory
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local mason_dir = "\\AppData\\Local\\nvim-data\\mason\\"
-local workspace_dir = home .. "\\.dev\\java\\" .. project_name
+local workspace_dir = home .. "\\**\\" .. project_name
 
 -- Determine OS
 local system_os = vim.fn.has("mac") == 1 and "mac"

@@ -133,6 +133,7 @@ local plugins = {
 	{ "folke/twilight.nvim", event = "VeryLazy" },
 	{ "folke/zen-mode.nvim", event = "VeryLazy" },
 	{ "echasnovski/mini.ai", version = false },
+	"olrtg/nvim-emmet",
 	"xiyaowong/transparent.nvim",
 }
 
