@@ -129,10 +129,10 @@ local plugins = {
 			require("inc_rename").setup()
 		end,
 	},
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-	},
+	{ "folke/noice.nvim", event = "VeryLazy" },
+	{ "folke/twilight.nvim", event = "VeryLazy" },
+	{ "folke/zen-mode.nvim", event = "VeryLazy" },
+	{ "echasnovski/mini.ai", version = false },
 	"xiyaowong/transparent.nvim",
 }
 
