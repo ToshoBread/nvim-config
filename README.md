@@ -40,14 +40,14 @@
 - [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
 - [Peek](https://github.com/toppair/peek.nvim) (_For Markdown_)
 - [Live-Server](https://github.com/barrett-ruth/live-server.nvim) (_For WebDev_)
+- [Inc-rename](https://github.com/smjonas/inc-rename.nvim)
 
 ### :bulb: LSP & CMP
 
 - [Nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [Mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 - [Mason-tool-installer](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
-- [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- [Blink.cmp](https://github.com/saghen/blink.cmp)
 - [Friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 - [Nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls) (_For Java_)
 
@@ -60,14 +60,21 @@
 
 - [Alpha-nvim](https://github.com/goolord/alpha-nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
+- [Lazydev](https://github.com/folke/lazydev.nvim)
 - [Web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-- [Commentary](https://github.com/tpope/vim-commentary)
+- [Vim-commentary](https://github.com/tpope/vim-commentary)
 - [Surround](https://github.com/kylechui/nvim-surround)
 - [Autopairs](https://github.com/windp/nvim-autopairs)
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Autotag](https://github.com/windwp/nvim-ts-autotag)
-- [Mini.ai](https://github.com/echasnovski/mini.ai) 
+- [Mini.ai](https://github.com/echasnovski/mini.ai)
+- [TreeSJ](https://github.com/Wansmer/treesj)
+- [Noice](https://github.com/folke/noice.nvim)
+- [Notify](https://github.com/rcarriga/nvim-notify)
+- [Spider](https://github.com/chrisgrieser/nvim-spider)
+- [Rainbow-Delimiters](https://github.com/HiPhish/rainbow-delimiters.nvim)
 - [Transparent](https://githhub.com/xiyaowong/transparent.nvim)
+- [Fidget](https://github.com/j-hui/fidget.nvim)
 
 <br>
 
