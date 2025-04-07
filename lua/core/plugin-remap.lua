@@ -11,8 +11,11 @@ remap("n", "<leader>gs", vim.cmd.Git)
 -- Telescope
 local builtin = require("telescope.builtin")
 
-remap("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-remap("n", "<leader>fw", builtin.live_grep, { desc = "Telescope live grep" })
+remap("n", "<leader>ff", builtin.find_files, { desc = "Find files in current workspace" })
+remap("n", "<leader>fw", builtin.live_grep, { desc = "Find regex in current workspace" })
+remap("n", "<leader>fb", builtin.current_buffer_fuzzy_find, { desc = "Find regex in current buffer" })
+remap("n", "<leader>ft", builtin.treesitter, { desc = "Find Treesitter symbols in current buffer" })
+remap("n", "<leader>fk", builtin.keymaps, { desc = "List all Normal Mode keymaps" })
 
 -- Harpoon
 local mark = require("harpoon.mark")
@@ -23,16 +26,16 @@ remap("n", "<C-h>", ui.toggle_quick_menu, { desc = "Open harpoon UI" })
 
 remap("n", "<leader>1", function()
 	ui.nav_file(1)
-end)
+end, { desc = "Goto harpoon mark 1" })
 remap("n", "<leader>2", function()
 	ui.nav_file(2)
-end)
+end, { desc = "Goto harpoon mark 2" })
 remap("n", "<leader>3", function()
 	ui.nav_file(3)
-end)
+end, { desc = "Goto harpoon mark 3" })
 remap("n", "<leader>4", function()
 	ui.nav_file(4)
-end)
+end, { desc = "Goto harpoon mark 4" })
 
 -- SearchBox
 remap("n", "/", vim.cmd.SearchBoxIncSearch)
@@ -70,4 +73,4 @@ remap(
 )
 
 -- Transparent
-remap("n", "<leader>tz", vim.cmd.TransparentToggle, { desc = "Toggle background opacity" })
+remap("n", "<leader>tr", vim.cmd.TransparentToggle, { desc = "Toggle background opacity", silent = true })
