@@ -1,5 +1,3 @@
-local remap = vim.keymap.set
-
 -- Incremental Rename
 remap("n", "<leader>rn", function()
 	return ":IncRename " .. vim.fn.expand("<cword>")
@@ -71,6 +69,3 @@ remap(
 	require("nvim-emmet").wrap_with_abbreviation,
 	{ desc = "Wrap selected text with Emmet" }
 )
-
--- Transparent
-remap("n", "<leader>tr", vim.cmd.TransparentToggle, { desc = "Toggle background opacity", silent = true })
