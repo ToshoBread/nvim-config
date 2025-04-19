@@ -4,6 +4,7 @@ return {
 		lazy = true,
 		ft = "sql",
 		dependencies = {
+			"kristijanhusak/vim-dadbod-completion",
 			{
 				"kristijanhusak/vim-dadbod-ui",
 				cmd = {
@@ -16,7 +17,6 @@ return {
 					vim.g.db_ui_use_nerd_fonts = 1
 				end,
 			},
-			"kristijanhusak/vim-dadbod-completion",
 		},
 	},
 }

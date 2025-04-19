@@ -23,8 +23,13 @@ require("lazy").setup("plugins", {
 	},
 })
 
+-- Require settings and remaps
 require("core")
 
+-- Set colorscheme
+vim.cmd.colorscheme("rose-pine")
+
+-- Oil.nvim hidden files
 _G.hidden_files = {
 	".",
 	"LICENSE",
@@ -32,11 +37,6 @@ _G.hidden_files = {
 	"package-lock",
 	"node_modules",
 }
-
--- Temporarily change colorscheme
-function _G.changeTheme(color)
-	vim.cmd.colorscheme(color)
-end
 
 -- Notify when saving
 vim.api.nvim_create_autocmd("BufWrite", {
@@ -53,7 +53,7 @@ vim.api.nvim_create_autocmd("User", {
 	group = "LualineReload",
 	pattern = "NoiceInit",
 	callback = function()
-		require("lualine").setup()
+		require("lualine").setup({})
 	end,
 })
 

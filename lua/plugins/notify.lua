@@ -9,6 +9,8 @@ return {
 				maximum_width = 50,
 				minimum_width = 10,
 				top_down = true,
+				background_colour = "#0f0f0f",
+				merge_duplicates = true,
 			})
 		end,
 	},

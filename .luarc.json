@@ -1,9 +1,0 @@
-{
-	"workspace.library": [
-		"C:/Users/Zion/AppData/Local/nvim",
-		"C:/Users/Zion/.config/nvim",
-		"${3rd}/luv/library"
-	],
-	"workspace.checkThirdParty": false,
-	"diagnostics.globals": ["vim"]
-}
