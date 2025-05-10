@@ -5,7 +5,7 @@ return {
 		event = "BufRead",
 		dependencies = { "MunifTanjim/nui.nvim" },
 		config = function()
-			require("inc_rename").setup()
+			require("inc_rename").setup({})
 		end,
 	},
 }

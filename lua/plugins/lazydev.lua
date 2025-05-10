@@ -1,6 +1,7 @@
 return {
 	{
 		"folke/lazydev.nvim",
+		event = "BufEnter",
 		ft = "lua",
 		config = function()
 			require("lazydev").setup({

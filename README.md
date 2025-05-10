@@ -75,9 +75,8 @@ _Personally configured for the following tech stack:_
 
 ### :art: Themes
 
-- [Rose-pine](url)
-- [Catppuccin](url)
-- [Vesper](url)
+- [Rose-pine](https://github.com/rose-pine/nvim)
+- [Catppuccin](https://github.com/catppuccin/nvim)
 
 <br>
 

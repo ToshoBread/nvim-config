@@ -15,6 +15,8 @@ return {
 					markdown = { "prettierd" },
 					python = { "ruff_format" },
 					sh = { "shfmt" },
+					sql = { "sqlfmt" },
+					mysql = { "sqlfmt" },
 				},
 				format_on_save = {
 					timeout_ms = 500,

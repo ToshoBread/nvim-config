@@ -5,7 +5,7 @@ return {
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
-			"folke/lazydev.nvim",
+			{ "folke/lazydev.nvim", ft = "lua" },
 			"xzbdmw/colorful-menu.nvim",
 			{ "mfussenegger/nvim-jdtls", ft = "java" },
 			{ "olrtg/nvim-emmet", ft = "html" },
@@ -60,12 +60,22 @@ return {
 				snippets = { preset = "luasnip" },
 
 				sources = {
-					default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+					default = { "lsp", "path", "snippets", "buffer" },
+					per_filetype = {
+						lua = { "lazydev", "lsp", "path", "snippets", "buffer" },
+						sql = { "lsp", "buffer", "dadbod" },
+						mysql = { "lsp", "buffer", "dadbod" },
+					},
 					providers = {
 						lazydev = {
 							name = "LazyDev",
 							module = "lazydev.integrations.blink",
 							score_offset = 100,
+						},
+						dadbod = {
+							name = "DadBod",
+							module = "vim_dadbod_completion.blink",
+							score_offset = -1,
 						},
 					},
 				},

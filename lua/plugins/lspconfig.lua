@@ -127,16 +127,16 @@ return {
 				},
 			})
 
-			lspconfig.sqls.setup({
-				settings = {
-					sqls = {
-						connections = {
-							driver = "mysql",
-							dataSourceName = "",
-						},
-					},
-				},
-			})
+			-- lspconfig.sqls.setup({
+			-- 	settings = {
+			-- 		sqls = {
+			-- 			connections = {
+			-- 				driver = "mysql",
+			-- 				dataSourceName = "",
+			-- 			},
+			-- 		},
+			-- 	},
+			-- })
 		end,
 	},
 }
