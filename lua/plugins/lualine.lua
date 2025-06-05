@@ -21,10 +21,8 @@ return {
 				options = {
 					icons_enabled = true,
 					theme = "auto",
-					-- component_separators = { left = "", right = "" },
-					component_separators = { left = "|", right = "|" },
-					-- section_separators = { left = "", right = "" },
-					section_separators = { left = "", right = "" },
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
 					disabled_filetypes = {
 						statusline = {},
 						winbar = {},
@@ -39,14 +37,16 @@ return {
 						winbar = 100,
 					},
 				},
+
 				sections = {
 					lualine_a = { { "mode", icons_enabled = true, icon = "" } },
 					lualine_b = { "branch", "diff", "diagnostics" },
-					lualine_c = {},
-					lualine_x = { filenameAndIcon },
-					lualine_y = { "lsp_status", "progress" },
+					lualine_c = { filenameAndIcon },
+					lualine_x = { "lsp_status" },
+					lualine_y = { "progress" },
 					lualine_z = { { "ctime", icons_enabled = true, icon = "" } },
 				},
+
 				inactive_sections = {
 					lualine_a = {},
 					lualine_b = {},
@@ -55,6 +55,7 @@ return {
 					lualine_y = { "filename" },
 					lualine_z = { "location" },
 				},
+
 				tabline = {},
 				winbar = {},
 				inactive_winbar = {},

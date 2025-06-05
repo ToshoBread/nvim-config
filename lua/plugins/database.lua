@@ -1,16 +1,6 @@
 return {
 	{
 		{
-			"tpope/vim-dadbod",
-			lazy = true,
-			cmd = {
-				"DBUI",
-				"DBUIToggle",
-				"DBUIAddConnection",
-				"DBUIFindBuffer",
-			},
-		},
-		{
 			"kristijanhusak/vim-dadbod-ui",
 			lazy = true,
 			cmd = {

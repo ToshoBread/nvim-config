@@ -43,24 +43,15 @@ remap("n", "?", vim.cmd.SearchBoxReplace)
 -- Undotree
 remap("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree pane" })
 
--- Peek
-local peek = require("peek")
-remap("n", "<leader>tp", function()
-	if peek.is_open() then
-		peek.close()
-	else
-		peek.open()
-	end
-end, { desc = "Toggle Markdown Preview" })
+-- Omni Preview
+remap("n", "<leader>po", ":OmniPreview start<CR>")
+remap("n", "<leader>pc", ":OmniPreview stop<CR>")
 
 -- Live Server
 remap("n", "<leader>tl", vim.cmd.LiveServerToggle, { desc = "Toggle Live Server" })
 
--- Twilight
-remap("n", "<leader>tt", vim.cmd.Twilight, { desc = "Toggle Twilight" })
-
 -- Zen Mode
-remap("n", "<leader>z", vim.cmd.ZenMode, { desc = "Toggle Zen Mode" })
+remap("n", "<leader>z", vim.cmd.NoNeckPain, { desc = "Center buffer to screen" })
 
 -- Emmet Abbreviation
 remap(

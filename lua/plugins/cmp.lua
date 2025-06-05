@@ -1,19 +1,28 @@
 return {
 	{
 		"saghen/blink.cmp",
-		event = "BufRead",
+		event = "BufEnter",
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
-			{ "folke/lazydev.nvim", ft = "lua" },
 			"xzbdmw/colorful-menu.nvim",
 			{ "mfussenegger/nvim-jdtls", ft = "java" },
 			{ "olrtg/nvim-emmet", ft = "html" },
 			{ "Jezda1337/nvim-html-css", ft = { "html", "css", "scss" } },
+			{
+				"folke/lazydev.nvim",
+				ft = "lua",
+				opts = {
+					library = {
+						{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+					},
+				},
+			},
 		},
 		version = "1.*",
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
+
 			require("blink.cmp").setup({
 				keymap = {
 					preset = "none",
@@ -31,7 +40,7 @@ return {
 
 				completion = {
 					documentation = { auto_show = true, window = { border = "rounded" } },
-					ghost_text = { enabled = false },
+					ghost_text = { enabled = true },
 					keyword = { range = "full" },
 					list = {
 						selection = {
