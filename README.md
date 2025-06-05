@@ -1,20 +1,5 @@
 <div><h1 align="center">My Neovim Config</h1></div>
 
-_Personally configured for the following tech stack:_
-
-[![Lua](https://skillicons.dev/icons?i=lua)](https://lua.org/)
-[![Python](https://skillicons.dev/icons?i=python)](https://www.python.org/)
-[![Java](https://skillicons.dev/icons?i=java)](https://www.java.com/)
-[![Bash](https://skillicons.dev/icons?i=bash)](https://www.gnu.org/software/bash/)
-[![HTML](https://skillicons.dev/icons?i=html)](https://html.spec.whatwg.org/multipage/)
-[![CSS](https://skillicons.dev/icons?i=css)](https://www.w3.org/Style/CSS/Overview.en.html)
-[![SCSS](https://skillicons.dev/icons?i=scss)](https://sass-lang.com/)
-[![Javascript](https://skillicons.dev/icons?i=js)](https://www.javascript.com/)
-[![Typescript](https://skillicons.dev/icons?i=ts)](https://www.typescriptlang.org/)
-[![PHP](https://skillicons.dev/icons?i=php)](https://www.php.net/)
-[![MySQL](https://skillicons.dev/icons?i=mysql)](https://www.mysql.com/)
-[![Markdown](https://skillicons.dev/icons?i=md)](https://daringfireball.net/projects/markdown/)
-
 ## :electric_plug: Plugins:
 
 ### :pushpin: Core
@@ -40,27 +25,23 @@ _Personally configured for the following tech stack:_
 
 - [Undotree](https://github.com/mbbill/undotree)
 - [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
-- [Peek](https://github.com/toppair/peek.nvim) (_For Markdown_)
-- [Live-Server](https://github.com/barrett-ruth/live-server.nvim) (_For WebDev_)
+- [Omnipreview](https://github.com/SylvanFranklin/omni-preview.nvim)
 - [Inc-rename](https://github.com/smjonas/inc-rename.nvim)
+- [Live-Server](https://github.com/barrett-ruth/live-server.nvim) (_For WebDev_)
+- [Vim-dadbod](https://github.com/tpope/vim-dadbod) (_For Database Queries_)
 
-### :bulb: LSP & CMP
+### :bulb: LSP & Cmp
 
 - [Nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [Blink.cmp](https://github.com/saghen/blink.cmp)
-- [Nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls) (_For Java_)
 
 ### :twisted_rightwards_arrows: Git Integration
 
-- [Vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 
 ### :star2: UI / QoL
 
-- [Alpha-nvim](https://github.com/goolord/alpha-nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
-- [Lazydev](https://github.com/folke/lazydev.nvim)
-- [Web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - [Vim-commentary](https://github.com/tpope/vim-commentary)
 - [Surround](https://github.com/kylechui/nvim-surround)
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
@@ -69,14 +50,14 @@ _Personally configured for the following tech stack:_
 - [TreeSJ](https://github.com/Wansmer/treesj)
 - [Noice](https://github.com/folke/noice.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
-- [Spider](https://github.com/chrisgrieser/nvim-spider)
 - [Rainbow-Delimiters](https://github.com/HiPhish/rainbow-delimiters.nvim)
-- [Fidget](https://github.com/j-hui/fidget.nvim)
 
 ### :art: Themes
 
+- [Oldworld](https://github.com/dgox16/oldworld.nvim)
 - [Rose-pine](https://github.com/rose-pine/nvim)
 - [Catppuccin](https://github.com/catppuccin/nvim)
+- [Synthweave](https://github.com/samharju/synthweave.nvim)
 
 <br>
 
