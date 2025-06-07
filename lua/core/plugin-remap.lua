@@ -7,8 +7,12 @@ end, { expr = true })
 remap("n", "<leader>gs", vim.cmd.Git, { desc = "Open Git" })
 
 -- Trouble
-remap("n", "<leader>xx", "<CMD>Trouble diagnostics toggle<CR>", { desc = "Quickfix list (Workspace)" })
-remap("n", "<leader>xX", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Quickfix list (Buffer)" })
+remap("n", "<leader>xx", "<CMD>Trouble diagnostics toggle<CR>", { desc = "Workspace Diagnostics" })
+remap("n", "<leader>xX", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buffer Diagnostics" })
+remap("n", "<leader>xs", "<CMD>Trouble symbols toggle focus=false<CR>", { desc = "Document Symbols" })
+remap("n", "<leader>xl", "<CMD>Trouble lsp toggle focus=false win.position=right<CR>")
+remap("n", "<leader>xL", "<CMD>Trouble loclist toggle<CR>")
+remap("n", "<leader>xQ", "<CMD>Trouble qflist toggle<CR>")
 
 -- Telescope
 local builtin = require("telescope.builtin")
