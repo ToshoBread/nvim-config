@@ -2,18 +2,21 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		lazy = true,
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" },
 		config = function()
-			require("telescope").setup({
+			local telescope = require("telescope")
+			telescope.setup({
 				defaults = {
 					border = true,
 					winblend = 0,
-					file_ignore_pattens = {
-						"node_modules",
-						".git/",
-						"build",
-						"dist",
-						"LICENSE",
+					file_ignore_patterns = {
+						"^lazy-lock.json",
+						"^package-lock.json",
+						"^node_modules",
+						"^.git/",
+						"^build",
+						"^dist",
+						"^LICENSE",
 					},
 				},
 				pickers = {
@@ -22,6 +25,8 @@ return {
 					},
 				},
 			})
+
+			telescope.load_extension("ui-select")
 		end,
 	},
 }

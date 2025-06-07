@@ -5,16 +5,19 @@ return {
 		config = function()
 			local conform = require("conform")
 
+			local prettier_fmt = { "prettierd", "prettier", stop_after_first = true }
+
 			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					javascript = { "prettierd" },
-					typescript = { "prettierd" },
-					css = { "prettierd" },
-					scss = { "prettierd" },
-					html = { "prettierd" },
-					json = { "prettierd" },
-					markdown = { "prettierd" },
+					typst = { "prettypst" },
+					javascript = prettier_fmt,
+					typescript = prettier_fmt,
+					css = prettier_fmt,
+					scss = prettier_fmt,
+					html = prettier_fmt,
+					json = prettier_fmt,
+					markdown = prettier_fmt,
 					python = { "ruff" },
 					sh = { "shfmt" },
 					sql = { "sqlfmt" },

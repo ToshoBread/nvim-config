@@ -32,10 +32,13 @@ vim.cmd.colorscheme("oldworld")
 -- Oil.nvim hidden files
 _G.hidden_files = {
 	".",
-	"LICENSE",
 	"lazy-lock",
 	"package-lock",
 	"node_modules",
+	".git/",
+	"build",
+	"dist",
+	"LICENSE",
 }
 
 -- Notify when saving

@@ -8,7 +8,7 @@ return {
 				extend_background_behind_borders = true,
 				styles = {
 					italic = false,
-					transparency = true,
+					-- transparency = true,
 				},
 			})
 		end,
@@ -19,7 +19,7 @@ return {
 		config = function()
 			require("catppuccin").setup({
 				flavour = "mocha", -- latte, frappe, macchiato, mocha
-				transparent_background = true,
+				-- transparent_background = true,
 				styles = {
 					comments = { "italic" },
 				},

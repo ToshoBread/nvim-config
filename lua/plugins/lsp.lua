@@ -21,21 +21,11 @@ return {
 				blink_cmp.get_lsp_capabilities()
 			)
 
-			local on_attach = function(client, bufnr)
-				local opts = { noremap = true, silent = true, buffer = bufnr }
-
-				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-				vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-				vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-			end
-
 			mason.setup()
 			mason_lspconfig.setup({
 				automatic_installation = true,
+				automatic_enable = true,
+
 				ensure_installed = {
 					"lua_ls",
 					"marksman",
@@ -48,17 +38,27 @@ return {
 						if server_name ~= "jdtls" then
 							lspconfig[server_name].setup({
 								capabilities = capabilities,
-								on_attach = on_attach,
 							})
 						end
 					end,
 
 					["lua_ls"] = function()
 						lspconfig["lua_ls"].setup({
+							capabilities = capabilities,
 							settings = {
 								Lua = {
 									diagnostics = {
-										globals = { "vim" },
+										globals = { "vim", "love" },
+									},
+									workspace = {
+										library = {
+											"C:/Program Files/luaAddons/love2d/library",
+										},
+
+										checkThirdParty = false,
+									},
+									telemetry = {
+										enable = false,
 									},
 								},
 							},
@@ -66,7 +66,7 @@ return {
 					end,
 
 					["pylsp"] = function()
-						lspconfig.pylsp.setup({
+						lspconfig["pylsp"].setup({
 							settings = {
 								pylsp = {
 									plugins = {
@@ -93,6 +93,17 @@ return {
 						})
 					end,
 				},
+			})
+
+			vim.api.nvim_create_autocmd("LspAttach", {
+				callback = function(e)
+					local opts = { buffer = e.buf }
+					remap("n", "gd", vim.lsp.buf.definition, opts)
+					remap("n", "K", vim.lsp.buf.hover, opts)
+					remap("n", "gr", vim.lsp.buf.references, opts)
+					remap("n", "<leader>rn", vim.lsp.buf.rename, opts)
+					remap("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+				end,
 			})
 		end,
 	},

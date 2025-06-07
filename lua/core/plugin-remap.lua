@@ -4,7 +4,11 @@ remap("n", "<leader>rn", function()
 end, { expr = true })
 
 -- Git
-remap("n", "<leader>gs", vim.cmd.Git)
+remap("n", "<leader>gs", vim.cmd.Git, { desc = "Open Git" })
+
+-- Trouble
+remap("n", "<leader>xx", "<CMD>Trouble diagnostics toggle<CR>", { desc = "Quickfix list (Workspace)" })
+remap("n", "<leader>xX", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Quickfix list (Buffer)" })
 
 -- Telescope
 local builtin = require("telescope.builtin")
