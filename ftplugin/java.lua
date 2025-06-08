@@ -5,6 +5,7 @@ local mason_dir = "\\AppData\\Local\\nvim-data\\mason\\"
 -- local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 -- local workspace_dir = home .. "\\.dev\\java\\" .. project_name
 local workspace_dir = vim.fn.getcwd()
+local blink_cmp = require("blink.cmp")
 
 -- Determine OS
 local system_os = vim.fn.has("mac") == 1 and "mac"
@@ -107,7 +108,12 @@ local config = {
 		},
 	},
 
-	capabilities = require("blink.cmp").get_lsp_capabilities(),
+	capabilities = vim.tbl_deep_extend(
+		"force",
+		{},
+		vim.lsp.protocol.make_client_capabilities(),
+		blink_cmp.get_lsp_capabilities()
+	),
 
 	flags = { allow_incremental_sync = true },
 
@@ -118,18 +124,6 @@ local config = {
 			projectImportProvider = false,
 		},
 	},
-
-	on_attach = function(client, bufnr)
-		-- jdtls.setup_dap({ hotcodereplace = "auto" })
-		-- require("jdtls.dap").setup_dap_main_class_configs()
-		local opts = { buffer = bufnr }
-
-		remap("n", "gd", vim.lsp.buf.definition, opts)
-		remap("n", "K", vim.lsp.buf.hover, opts)
-		remap("n", "gr", vim.lsp.buf.references, opts)
-		remap("n", "<leader>rn", vim.lsp.buf.rename, opts)
-		remap("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-	end,
 }
 
 jdtls.start_or_attach(config)
