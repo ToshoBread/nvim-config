@@ -8,7 +8,7 @@ return {
 			local recorder = require("recorder")
 			local battery = require("battery")
 
-			vim.api.nvim_set_hl(0, "LualineFilenameWithIcon", { bg = "NONE" })
+			vim.api.nvim_set_hl(0, "LualineFilenameWithIcon", { bg = "NONE", fg = "#e0def4" })
 
 			local function filenameAndIcon()
 				local filename = vim.fn.expand("%:t")
@@ -45,8 +45,10 @@ return {
 					theme = "auto",
 					-- component_separators = { left = "", right = "" },
 					-- section_separators = { left = "", right = "" },
-					section_separators = { left = "", right = "" },
-					component_separators = { left = "", right = "" },
+					-- section_separators = { left = "", right = "" },
+					-- component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
+					component_separators = { left = "|", right = "|" },
 					disabled_filetypes = {
 						statusline = {},
 						winbar = {},

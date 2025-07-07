@@ -5,6 +5,8 @@ return {
 		ft = { "html", "php", "js", "ts", "jsx", "tsx" },
 		build = "pnpm add -g live-server",
 		cmd = { "LiveServerStart", "LiveServerStop" },
-		config = true,
+		config = function()
+			require("live-server").setup()
+		end,
 	},
 }

@@ -21,6 +21,7 @@
 
 ### :wrench: Utilities
 
+- [Floaterm](https://github.com/nvzone/floaterm)
 - [Omni-preview](https://github.com/SylvanFranklin/omni-preview.nvim)
 - [Trouble](https://github.com/folke/trouble.nvim)
 - [Undotree](https://github.com/mbbill/undotree)

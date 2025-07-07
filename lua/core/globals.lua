@@ -1,4 +1,4 @@
--- Auto set noremap and silent on remaps, allowing for config
+-- Auto set noremap and silent on remaps, allowing for extended config
 function _G.remap(mode, lhs, rhs, opts)
 	local options = { noremap = true, silent = true }
 	if opts then
