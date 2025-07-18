@@ -41,7 +41,6 @@
 ### :star2: UI / QoL
 
 - [Autotag](https://github.com/windwp/nvim-ts-autotag)
-- [Battery](https://github.com/justinhj/battery.nvim)
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Inc-rename](https://github.com/smjonas/inc-rename.nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
@@ -54,14 +53,12 @@
 - [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
 - [TreeSJ](https://github.com/Wansmer/treesj)
 - [Vim-commentary](https://github.com/tpope/vim-commentary)
-- [Presence](https://github.com/andweeb/presence.nvim) (_Discord_)
 
 ### :art: Themes
 
 - [Catppuccin](https://github.com/catppuccin/nvim)
 - [Oldworld](https://github.com/dgox16/oldworld.nvim)
 - [Rose-pine](https://github.com/rose-pine/nvim)
-- [Synthweave](https://github.com/samharju/synthweave.nvim)
 
 <br>
 
