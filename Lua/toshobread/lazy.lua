@@ -53,11 +53,12 @@ local plugins = {
 			-- Autocompletion support
 			{ "hrsh7th/nvim-cmp" },
 			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "L3MON4D3/LuaSnip" },
+			{ "L3MON4D3/LuaSnip", dependencies = "rafamadriz/friendly-snippets" },
 			{ "saadparwaiz1/cmp_luasnip" },
 		},
 	},
 	{ "nvimtools/none-ls.nvim", dependencies = { "nvimtools/none-ls-extras.nvim" } },
+	"rafamadriz/friendly-snippets",
 
 	-- Git Integration
 	"tpope/vim-fugitive",
