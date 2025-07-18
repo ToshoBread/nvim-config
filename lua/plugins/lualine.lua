@@ -58,14 +58,13 @@ return {
 				},
 
 				sections = {
-					lualine_a = { "mode" },
-					-- lualine_a = { { "mode", icons_enabled = true, icon = "" } },
+					-- lualine_a = { "mode" },
+					lualine_a = { { "mode", icons_enabled = true, icon = "" } },
 					lualine_b = { "diagnostics", "branch", "diff" },
 					lualine_c = { filenameAndIcon },
 					lualine_x = { "lsp_status" },
 					lualine_y = { recorder.displaySlots, recorder.recordingStatus },
-					lualine_z = { clock12hour },
-					-- lualine_z = { { "ctime", icons_enabled = true, icon = "" } },
+					lualine_z = { { clock12hour, icons_enabled = true, icon = "" } },
 				},
 
 				inactive_sections = {
