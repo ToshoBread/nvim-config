@@ -28,7 +28,7 @@ local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
 remap("n", "<leader>hh", mark.add_file, { desc = "Add mark to harpoon" })
-remap("n", "<C-h>", ui.toggle_quick_menu, { desc = "Open harpoon UI" })
+remap("n", "<leader>hr", ui.toggle_quick_menu, { desc = "Open harpoon UI" })
 
 remap("n", "<leader>1", function()
 	ui.nav_file(1)
@@ -42,6 +42,9 @@ end, { desc = "Goto harpoon mark 3" })
 remap("n", "<leader>4", function()
 	ui.nav_file(4)
 end, { desc = "Goto harpoon mark 4" })
+remap("n", "<leader>5", function()
+	ui.nav_file(5)
+end, { desc = "Goto harpoon mark 5" })
 
 -- SearchBox
 remap("n", "/", vim.cmd.SearchBoxIncSearch)
@@ -68,3 +71,6 @@ remap(
 	require("nvim-emmet").wrap_with_abbreviation,
 	{ desc = "Wrap selected text with Emmet" }
 )
+
+-- Floaterm
+remap("n", "<C-x>", vim.cmd.FloatermToggle, { desc = "Open Floating Terminal Buffer" })

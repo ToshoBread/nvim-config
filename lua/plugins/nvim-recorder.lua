@@ -3,7 +3,10 @@ return {
 		"chrisgrieser/nvim-recorder",
 		dependencies = "rcarriga/nvim-notify",
 		opts = {
+			slots = { "a", "b" },
+			clear = false,
 			lessNotifications = true,
+			useNerdfontIcons = true,
 
 			mapping = {
 				startStopRecording = "q",

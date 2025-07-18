@@ -27,7 +27,7 @@ require("lazy").setup("plugins", {
 require("core")
 
 -- Set colorscheme
-vim.cmd.colorscheme("oldworld")
+vim.cmd.colorscheme("catppuccin")
 
 -- Oil.nvim hidden files
 _G.hidden_files = {
@@ -49,16 +49,3 @@ vim.api.nvim_create_autocmd("BufWrite", {
 		vim.notify("Written to " .. currentBuf)
 	end,
 })
-
--- Define an autocmd to reload lualine when noice.nvim is initialized
-vim.api.nvim_create_augroup("LualineReload", { clear = true })
-vim.api.nvim_create_autocmd("User", {
-	group = "LualineReload",
-	pattern = "NoiceInit",
-	callback = function()
-		require("lualine").setup({})
-	end,
-})
-
--- Trigger the NoiceInit event after noice.nvim is loaded
-vim.api.nvim_exec_autocmds("User", { pattern = "NoiceInit" })

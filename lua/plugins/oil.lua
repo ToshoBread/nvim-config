@@ -29,7 +29,7 @@ return {
 				delete_to_trash = true,
 				skip_confirm_for_simple_edits = true,
 				prompt_save_on_select_new_entry = true,
-				cleanup_delay_ms = 1500,
+				cleanup_delay_ms = 1000,
 				lsp_file_methods = {
 					enabled = false,
 					timeout_ms = 1000,
@@ -66,7 +66,8 @@ return {
 				view_options = {
 					show_hidden = false,
 					is_hidden_file = function(name, bufnr)
-						for _, hidden_file in ipairs(hidden_files) do -- hidden_files table is in init.lua
+						-- hidden_files table is in init.lua
+						for _, hidden_file in ipairs(hidden_files) do
 							if
 								name:match("^" .. vim.pesc(hidden_file)) -- Start of the name
 								or name:match(vim.pesc(hidden_file) .. "$") -- End of the name
@@ -75,11 +76,14 @@ return {
 								return true
 							end
 						end
+						return false
 					end,
+
 					is_always_hidden = function(name, bufnr)
 						if name == name:match("%^.git$") then
 							return true
 						end
+						return false
 					end,
 					-- Sort file names with numbers in a more intuitive order for humans.
 					-- Can be "fast", true, or false. "fast" will turn it off for large directories.

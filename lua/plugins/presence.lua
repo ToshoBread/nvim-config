@@ -1,3 +1,4 @@
+-- For Discord
 return {
 	{
 		"andweeb/presence.nvim",

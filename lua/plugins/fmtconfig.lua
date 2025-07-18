@@ -11,6 +11,10 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					typst = { "prettypst" },
+					python = { "ruff" },
+					sh = { "shfmt" },
+					sql = { "sqlfmt" },
+					mysql = { "sqlfmt" },
 					javascript = prettier_fmt,
 					typescript = prettier_fmt,
 					css = prettier_fmt,
@@ -18,13 +22,9 @@ return {
 					html = prettier_fmt,
 					json = prettier_fmt,
 					markdown = prettier_fmt,
-					python = { "ruff" },
-					sh = { "shfmt" },
-					sql = { "sqlfmt" },
-					mysql = { "sqlfmt" },
 				},
 				format_on_save = {
-					timeout_ms = 1000,
+					timeout_ms = 2500,
 					lsp_fallback = true,
 				},
 			})
