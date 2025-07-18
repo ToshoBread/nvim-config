@@ -5,7 +5,6 @@ vim.opt.mouse = ""
 
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
--- vim.opt.fileencoding = "utf-8"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -41,8 +40,14 @@ vim.opt.isfname:append("@-@")
 vim.opt.colorcolumn = "0"
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 0
+
 vim.diagnostic.config({
 	virtual_text = true,
+	underline = false,
+	update_in_insert = false,
+	severity_sort = true,
+	signs = true,
+	virtual_lines = false,
 })
 
 vim.opt.splitbelow = true
