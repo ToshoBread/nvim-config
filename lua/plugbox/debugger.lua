@@ -28,11 +28,6 @@ return {
 				enabled = true,
 				-- virt_text_win_col = 80,
 			})
-
-			-- local dap = require("dap")
-			-- remap("n", "<leader>so", dap.step_over(), { desc = "Debug Step Over" })
-			-- remap("n", "<leader>sO", dap.step_out(), { desc = "Debug Step Out" })
-			-- remap("n", "<leader>si", dap.step_into(), { desc = "Debug Step Into" })
 		end,
 
 		keys = {

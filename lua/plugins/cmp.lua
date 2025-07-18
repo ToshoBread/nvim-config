@@ -4,6 +4,7 @@ return {
 		event = "BufEnter",
 		dependencies = {
 			"rafamadriz/friendly-snippets",
+
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 			"xzbdmw/colorful-menu.nvim",
 			{ "mfussenegger/nvim-jdtls", ft = "java" },
@@ -27,7 +28,7 @@ return {
 				keymap = {
 					preset = "none",
 					["<CR>"] = { "select_and_accept", "fallback" },
-					["<C-e>"] = { "hide", "fallback" },
+					["<C-x>"] = { "hide", "fallback" },
 					["<C-j>"] = { "select_next", "fallback" },
 					["<C-k>"] = { "select_prev", "fallback" },
 					["<Tab>"] = { "snippet_forward", "fallback" },
@@ -40,7 +41,7 @@ return {
 
 				completion = {
 					documentation = { auto_show = true, window = { border = "rounded" } },
-					ghost_text = { enabled = true },
+					ghost_text = { enabled = false },
 					keyword = { range = "full" },
 					list = {
 						selection = {
