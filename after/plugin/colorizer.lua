@@ -1,0 +1,1 @@
+-- Insert Colorizer setup config
