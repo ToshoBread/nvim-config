@@ -85,3 +85,5 @@ key.set("n", "<leader>po", function()
 		peek.open()
 	end
 end)
+
+key.set("n", "<leader>lt", vim.cmd.LiveServerToggle)
