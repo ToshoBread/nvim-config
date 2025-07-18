@@ -5,7 +5,7 @@ key.set("n", "<leader>ee", "<CMD>Oil<CR>", { desc = "Return to Oil.nvim", silent
 -- Write file
 key.set("n", "<leader>ww", "<CMD>w<CR>", { desc = "Write/Save File" })
 key.set("n", "<leader>wq", "<CMD>wq<CR>", { desc = "Write file then quit" })
-key.set("n", "<leader>qa", "<CMD>qa!<CR>", { desc = "Force quit without saving", silent = true })
+key.set("n", "<leader>qq", "<CMD>qa!<CR>", { desc = "Force quit without saving", silent = true })
 key.set("n", "<leader>qw", "<CMD>close<CR>", { desc = "Close window", silent = true })
 
 key.set("n", "<leader><C-a>", "ggvG", { desc = "Select the entire buffer", silent = true })
@@ -75,7 +75,7 @@ key.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree pane
 
 -- Peek
 local peek = require("peek")
-key.set("n", "<leader>po", function()
+key.set("n", "<leader>tp", function()
 	if peek.is_open() then
 		peek.close()
 	else
@@ -84,7 +84,13 @@ key.set("n", "<leader>po", function()
 end, { desc = "Toggle Markdown Preview" })
 
 -- Live Server
-key.set("n", "<leader>lt", vim.cmd.LiveServerToggle, { desc = "Toggle Live Server" })
+key.set("n", "<leader>tl", vim.cmd.LiveServerToggle, { desc = "Toggle Live Server" })
+
+-- Twilight
+key.set("n", "<leader>tt", vim.cmd.Twilight, { desc = "Toggle Twilight" })
+
+-- Zen Mode
+key.set("n", "<leader>z", vim.cmd.ZenMode, { desc = "Toggle Zen Mode" })
 
 -- Transparent
-key.set("n", "<leader>z", vim.cmd.TransparentToggle, { desc = "Toggle background opacity" })
+key.set("n", "<leader>tz", vim.cmd.TransparentToggle, { desc = "Toggle background opacity" })

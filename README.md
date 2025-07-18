@@ -66,6 +66,7 @@
 - [Autopairs](https://github.com/windp/nvim-autopairs)
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Autotag](https://github.com/windwp/nvim-ts-autotag)
+- [Mini.ai](https://github.com/echasnovski/mini.ai) 
 - [Transparent](https://githhub.com/xiyaowong/transparent.nvim)
 
 <br>
