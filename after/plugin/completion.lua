@@ -65,7 +65,7 @@ cmp.setup({
 			end,
 		},
 		{ name = "luasnip" },
-		{ name = "nvim_lua" },
+		-- { name = "nvim_lua" },
 		{ name = "path" },
 		{ name = "vim-dadbod-completion" },
 	}),

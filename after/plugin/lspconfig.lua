@@ -16,6 +16,7 @@ mason_lspconfig.setup({
 		"bashls",
 		"jdtls",
 		"html",
+		"emmet_language_server",
 		"cssls",
 		"ts_ls",
 		"sqls",
