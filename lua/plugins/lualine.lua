@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VimEnter",
-		dependencies = { "archibate/lualine-time" },
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			local devicons = require("nvim-web-devicons")
 			local recorder = require("recorder")
@@ -30,6 +30,10 @@ return {
 				)
 			end
 
+			local function clock12hour()
+				return os.date("%I:%M%p")
+			end
+
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
@@ -54,12 +58,14 @@ return {
 				},
 
 				sections = {
-					lualine_a = { { "mode", icons_enabled = true, icon = "" } },
+					lualine_a = { "mode" },
+					-- lualine_a = { { "mode", icons_enabled = true, icon = "" } },
 					lualine_b = { "diagnostics", "branch", "diff" },
 					lualine_c = { filenameAndIcon },
 					lualine_x = { "lsp_status" },
 					lualine_y = { recorder.displaySlots, recorder.recordingStatus },
-					lualine_z = { { "ctime", icons_enabled = true, icon = "" } },
+					lualine_z = { clock12hour },
+					-- lualine_z = { { "ctime", icons_enabled = true, icon = "" } },
 				},
 
 				inactive_sections = {
