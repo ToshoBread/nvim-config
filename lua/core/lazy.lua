@@ -22,25 +22,19 @@ local plugins = {
     checker = { enabled = true },
 
     -- Themes
-    {
-        "rose-pine/nvim",
-        name = "rose-pine",
-        lazy = false, -- Ensure it's loaded on startup
-        priority = 1000, -- Set high priority for color scheme
-    },
-    { "catppuccin/nvim",               name = "catppuccin" },
-    { "olimorris/onedarkpro.nvim",     name = "onedarkpro" },
-    { "tiagovla/tokyodark.nvim",       name = "tokyodark" },
+    { "nyoom-engineering/oxocarbon.nvim", name = "oxocarbon" },
+    { "rose-pine/nvim",                   name = "rose-pine" },
+    { "catppuccin/nvim",                  name = "catppuccin" },
 
     -- Navigation
-    { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+    { "nvim-telescope/telescope.nvim",    dependencies = "nvim-lua/plenary.nvim" },
     "ThePrimeagen/harpoon",
 
     -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        dependencies = { "nvim-treesitter/playground" },
+        dependencies = "nvim-treesitter/playground",
     },
 
     -- Utilities
@@ -57,25 +51,36 @@ local plugins = {
             "williamboman/mason-lspconfig.nvim", -- Optional, for Mason integration
             "jayp0521/mason-null-ls.nvim",
             "WhoIsSethDaniel/mason-tool-installer.nvim",
+            "j-hui/fidget.nvim",
+            "folke/neodev.nvim",
         },
     },
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
-    { "L3MON4D3/LuaSnip",       dependencies = "rafamadriz/friendly-snippets" },
+    { "L3MON4D3/LuaSnip",        dependencies = "rafamadriz/friendly-snippets" },
     "saadparwaiz1/cmp_luasnip",
-    { "nvimtools/none-ls.nvim", dependencies = { "nvimtools/none-ls-extras.nvim" } },
-    "rafamadriz/friendly-snippets",
-    { "mfussenegger/nvim-jdtls",   ft = "java" },
+    { "nvimtools/none-ls.nvim",  dependencies = "nvimtools/none-ls-extras.nvim" },
+    { "mfussenegger/nvim-jdtls", ft = "java" },
 
     -- Git Integration
     "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",
 
     -- UI / QoL
-    { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+    { "nvim-lualine/lualine.nvim", dependencies = "nvim-tree/nvim-web-devicons" },
     "rcarriga/nvim-notify",
     "norcalli/nvim-colorizer.lua",
-    { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
+    "tpope/vim-commentary",
+    {
+        "kylechui/nvim-surround",
+        version = "*",
+        event = "VeryLazy",
+    },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = true,
+    },
 }
 
 require("lazy").setup(plugins, {})

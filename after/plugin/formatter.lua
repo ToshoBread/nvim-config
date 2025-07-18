@@ -12,7 +12,9 @@ mason_null_ls.setup({
 local sources = {
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.completion.spell,
+    -- null_ls.builtins.completion.spell,
+    require("none-ls.formatting.ruff_format").with({ extra_args = { "--extend-select", "I" } }),
+    require("none-ls.formatting.ruff_format"),
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
