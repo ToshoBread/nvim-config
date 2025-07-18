@@ -9,8 +9,8 @@ conform.setup({
 		html = { "prettier" },
 		json = { "prettier" },
 		markdown = { "prettier" },
-		sh = { "shfmt" },
 		python = { "ruff_format" },
+		sh = { "shfmt" },
 	},
 	format_on_save = {
 		timeout_ms = 500,
