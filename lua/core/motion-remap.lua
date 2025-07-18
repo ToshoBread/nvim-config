@@ -13,12 +13,13 @@ remap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text down" })
 
 remap({ "n", "v" }, "d", '"_d', { desc = "Delete to the void register" })
 
-remap("i", "<C-H>", '<C-o>"_diw', { desc = "Delete the current word in insert mode" })
-
 remap("v", "<C-S-Y>", '"+yy', { desc = "Copy to system clipboard" })
 
 remap("v", ">", ">gv", { desc = "Indent a line or block" })
 remap("v", "<", "<gv", { desc = "Unindent a line or block" })
+
+remap("n", "<CR>", "o<Esc>k", { desc = "Insert a line below" })
+remap("n", "<S-CR>", "O<Esc>j", { desc = "Insert a line above" })
 
 -- Buffer Navigation
 remap({ "n", "o", "x" }, "w", "<CMD>lua require('spider').motion('w')<CR>", { desc = "Move forward" })

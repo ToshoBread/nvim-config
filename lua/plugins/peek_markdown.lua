@@ -2,6 +2,7 @@ return {
 	{
 		"toppair/peek.nvim",
 		build = "deno task --quiet build:fast",
+		event = "BufEnter",
 		ft = "markdown",
 		config = function()
 			require("peek").setup({
