@@ -10,6 +10,7 @@ mason.setup()
 mason_lspconfig.setup({
 	ensure_installed = {
 		"lua_ls",
+		"marksman",
 		"phpactor",
 		"pylsp",
 		"bashls",
