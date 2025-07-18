@@ -17,6 +17,9 @@ remap("i", "<C-H>", '<C-o>"_diw', { desc = "Delete the current word in insert mo
 
 remap("v", "<C-S-Y>", '"+yy', { desc = "Copy to system clipboard" })
 
+remap("v", ">", ">gv", { desc = "Indent a line or block" })
+remap("v", "<", "<gv", { desc = "Unindent a line or block" })
+
 -- Buffer Navigation
 remap({ "n", "o", "x" }, "w", "<CMD>lua require('spider').motion('w')<CR>", { desc = "Move forward" })
 remap({ "n", "o", "x" }, "e", "<CMD>lua require('spider').motion('e')<CR>", { desc = "Move foward to end" })
