@@ -22,9 +22,9 @@ remap("n", "<CR>", "o<Esc>k", { desc = "Insert a line below" })
 remap("n", "<S-CR>", "O<Esc>j", { desc = "Insert a line above" })
 
 -- Buffer Navigation
-remap({ "n", "o", "x" }, "w", "<CMD>lua require('spider').motion('w')<CR>", { desc = "Move forward" })
-remap({ "n", "o", "x" }, "e", "<CMD>lua require('spider').motion('e')<CR>", { desc = "Move foward to end" })
-remap({ "n", "o", "x" }, "b", "<CMD>lua require('spider').motion('b')<CR>", { desc = "Move backward" })
+-- remap({ "n", "o", "x" }, "w", "<CMD>lua require('spider').motion('w')<CR>", { desc = "Move forward" })
+-- remap({ "n", "o", "x" }, "e", "<CMD>lua require('spider').motion('e')<CR>", { desc = "Move foward to end" })
+-- remap({ "n", "o", "x" }, "b", "<CMD>lua require('spider').motion('b')<CR>", { desc = "Move backward" })
 
 remap("n", "n", "nzzzv", { desc = "Center cursor in forward incremental search" })
 remap("n", "N", "Nzzzv", { desc = "Center cursor in backward incremental search" })

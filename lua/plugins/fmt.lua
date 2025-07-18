@@ -3,7 +3,9 @@ return {
 		"stevearc/conform.nvim",
 		event = "BufRead",
 		config = function()
-			require("conform").setup({
+			local conform = require("conform")
+
+			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
 					javascript = { "prettierd" },
@@ -13,18 +15,17 @@ return {
 					html = { "prettierd" },
 					json = { "prettierd" },
 					markdown = { "prettierd" },
-					python = { "ruff_format" },
+					python = { "ruff" },
 					sh = { "shfmt" },
 					sql = { "sqlfmt" },
 					mysql = { "sqlfmt" },
 				},
 				format_on_save = {
-					timeout_ms = 500,
+					timeout_ms = 1000,
 					lsp_fallback = true,
 				},
 			})
 
-			local conform = require("conform")
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*",
 				callback = function()

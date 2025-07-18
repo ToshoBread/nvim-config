@@ -1,6 +1,6 @@
 return {
 	{
 		"chrisgrieser/nvim-spider",
-		event = "VimEnter",
+		event = "InsertEnter",
 	},
 }

@@ -5,6 +5,7 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"jay-babu/mason-nvim-dap.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			"rcarriga/nvim-dap-ui",
 			"theHamsta/nvim-dap-virtual-text",
 			"nvim-neotest/nvim-nio",
@@ -16,7 +17,46 @@ return {
 				automatic_installation = true,
 			})
 
-			require("nvim-dap-virtual-text").setup()
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"java-debug-adapter",
+					"java-test",
+				},
+			})
+
+			require("nvim-dap-virtual-text").setup({
+				enabled = true,
+				-- virt_text_win_col = 80,
+			})
+
+			-- local dap = require("dap")
+			-- remap("n", "<leader>so", dap.step_over(), { desc = "Debug Step Over" })
+			-- remap("n", "<leader>sO", dap.step_out(), { desc = "Debug Step Out" })
+			-- remap("n", "<leader>si", dap.step_into(), { desc = "Debug Step Into" })
 		end,
+
+		keys = {
+			{
+				"<leader>so",
+				function()
+					require("dap").step_over()
+				end,
+				desc = "Debug Step Over",
+			},
+			{
+				"<leader>sO",
+				function()
+					require("dap").step_out()
+				end,
+				desc = "Debug Step Out",
+			},
+			{
+				"<leader>si",
+				function()
+					require("dap").step_into()
+				end,
+				desc = "Debug Step Into",
+			},
+		},
 	},
 }

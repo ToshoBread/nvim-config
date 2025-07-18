@@ -2,7 +2,7 @@ return {
 	{
 		"echasnovski/mini.ai",
 		event = "BufRead",
-		version = "false",
+		version = false,
 		config = true,
 	},
 }
