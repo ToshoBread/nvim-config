@@ -2,10 +2,11 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VimEnter",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		dependencies = { "nvim-tree/nvim-web-devicons", "justinhj/battery.nvim" },
 		config = function()
 			local devicons = require("nvim-web-devicons")
 			local recorder = require("recorder")
+			local battery = require("battery")
 
 			vim.api.nvim_set_hl(0, "LualineFilenameWithIcon", { bg = "NONE" })
 
@@ -32,6 +33,10 @@ return {
 
 			local function clock12hour()
 				return os.date("%I:%M%p")
+			end
+
+			local function batteryStatus()
+				return battery.get_status_line()
 			end
 
 			require("lualine").setup({
@@ -64,7 +69,7 @@ return {
 					lualine_c = { filenameAndIcon },
 					lualine_x = { "lsp_status" },
 					lualine_y = { recorder.displaySlots, recorder.recordingStatus },
-					lualine_z = { { clock12hour, icons_enabled = true, icon = "" } },
+					lualine_z = { batteryStatus, { clock12hour, icons_enabled = true, icon = "" } },
 				},
 
 				inactive_sections = {
