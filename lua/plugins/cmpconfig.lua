@@ -7,7 +7,6 @@ return {
 
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 			"xzbdmw/colorful-menu.nvim",
-			{ "mfussenegger/nvim-jdtls", ft = "java" },
 			{ "olrtg/nvim-emmet", ft = "html" },
 			{ "Jezda1337/nvim-html-css", ft = { "html", "css", "scss" } },
 			{
