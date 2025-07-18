@@ -2,9 +2,9 @@
 local jdtls = require("jdtls")
 local home = vim.env.USERPROFILE or vim.env.HOME -- Get the home directory
 local mason_dir = "\\AppData\\Local\\nvim-data\\mason\\"
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = home .. "\\.dev\\java\\" .. project_name
--- local workspace_dir = vim.fn.getcwd()
+-- local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+-- local workspace_dir = home .. "\\.dev\\java\\" .. project_name
+local workspace_dir = vim.fn.getcwd()
 
 -- Determine OS
 local system_os = vim.fn.has("mac") == 1 and "mac"
@@ -15,9 +15,10 @@ local system_os = vim.fn.has("mac") == 1 and "mac"
 -- Java debug and test bundles
 local bundles = {
 	vim.fn.glob(home .. mason_dir .. "share\\java-debug-adapter\\com.microsoft.java.debug.plugin.jar"),
+	"C:\\Program Files (x86)\\Java\\lib\\mysql-connector-j-9.2.0.jar",
 }
 
-vim.list_extend(bundles, vim.split(vim.fn.glob(home .. mason_dir .. "share\\java-test\\*.jar", 1), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob(home .. mason_dir .. "share\\java-test\\*.jar", true), "\n"))
 
 local jdtls_launcher = vim.fn.glob(home .. mason_dir .. "share\\jdtls\\plugins\\org.eclipse.equinox.launcher_*.jar")
 if jdtls_launcher == "" then
@@ -27,7 +28,6 @@ end
 -- JDTLS configuration
 local config = {
 	cmd = {
-		-- "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot\\bin\\java.exe",
 		"java",
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
 		"-Dosgi.bundles.defaultStartLevel=4",
@@ -53,10 +53,9 @@ local config = {
 
 	-- This is the default if not provided, you can remove it. Or adjust as needed.
 	-- One dedicated LSP server & client will be started per unique root_dir
-	-- root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "pom.xml", "build.gradle", "src\\" }),
 	-- or vim.fn.getcwd(),
 
-	root_dir = require("jdtls.setup").find_root({ ".git", "src/", "build.gradle" }),
+	root_dir = require("jdtls.setup").find_root({ ".git", "build.gradle", "pom.xml" }),
 
 	settings = {
 		java = {
@@ -70,6 +69,10 @@ local config = {
 						path = "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot\\",
 					},
 				},
+			},
+			project = {
+				sourcePaths = { "src" },
+				outputPath = "bin",
 			},
 			maven = { downloadSources = true },
 			implementationsCodeLens = { enabled = true },
@@ -104,7 +107,7 @@ local config = {
 		},
 	},
 
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	capabilities = require("blink.cmp").get_lsp_capabilities(),
 
 	flags = { allow_incremental_sync = true },
 
