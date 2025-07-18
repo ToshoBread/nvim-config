@@ -41,6 +41,9 @@ vim.opt.isfname:append("@-@")
 vim.opt.colorcolumn = "0"
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 0
+vim.diagnostic.config({
+	virtual_text = true,
+})
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true

@@ -1,9 +1,10 @@
 -- JDTLS (Java LSP) configuration
 local jdtls = require("jdtls")
 local home = vim.env.USERPROFILE or vim.env.HOME -- Get the home directory
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local mason_dir = "\\AppData\\Local\\nvim-data\\mason\\"
-local workspace_dir = home .. "\\**\\" .. project_name
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+local workspace_dir = home .. "\\.dev\\java\\" .. project_name
+-- local workspace_dir = vim.fn.getcwd()
 
 -- Determine OS
 local system_os = vim.fn.has("mac") == 1 and "mac"
@@ -18,8 +19,7 @@ local bundles = {
 
 vim.list_extend(bundles, vim.split(vim.fn.glob(home .. mason_dir .. "share\\java-test\\*.jar", 1), "\n"))
 
-local jdtls_launcher =
-	vim.fn.glob(home .. mason_dir .. "share\\jdtls\\plugins\\org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar")
+local jdtls_launcher = vim.fn.glob(home .. mason_dir .. "share\\jdtls\\plugins\\org.eclipse.equinox.launcher_*.jar")
 if jdtls_launcher == "" then
 	error("JDTLS launcher JAR not found! Check Mason installation.")
 end
@@ -34,13 +34,14 @@ local config = {
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
 		"-Dlog.protocol=true",
 		"-Dlog.level=ALL",
-		"-Xmx4g",
 		"-javaagent:" .. home .. mason_dir .. "share\\jdtls\\lombok.jar",
+		"-Xmx4g",
 		"--add-modules=ALL-SYSTEM",
 		"--add-opens",
 		"java.base/java.util=ALL-UNNAMED",
 		"--add-opens",
 		"java.base/java.lang=ALL-UNNAMED",
+
 		-- Eclipse jdtls location
 		"-jar",
 		jdtls_launcher,
@@ -50,8 +51,12 @@ local config = {
 		workspace_dir,
 	},
 
-	root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "pom.xml", "build.gradle", "src" })
-		or vim.fn.getcwd(),
+	-- This is the default if not provided, you can remove it. Or adjust as needed.
+	-- One dedicated LSP server & client will be started per unique root_dir
+	-- root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "pom.xml", "build.gradle", "src\\" }),
+	-- or vim.fn.getcwd(),
+
+	root_dir = require("jdtls.setup").find_root({ ".git", "src/", "build.gradle" }),
 
 	settings = {
 		java = {
