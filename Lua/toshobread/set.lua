@@ -25,14 +25,13 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 10
-vim.opt.signcolumn = "yes:1"
+vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 60
 
 vim.opt.colorcolumn = "0"
 
---vim.opt.clipboard = "unnamedplus"
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 --Set default terminal to powershell-core
