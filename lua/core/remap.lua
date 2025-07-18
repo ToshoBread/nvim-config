@@ -1,5 +1,4 @@
 local key = vim.keymap
-local builtin = require("telescope.builtin")
 
 -- Return to netrw
 key.set("n", "<leader>ee", vim.cmd.Ex)
@@ -31,5 +30,27 @@ key.set("n", "N", "Nzzzv")
 key.set("i", "<C-H>", "<C-O>db")
 
 -- Telescope
+local builtin = require("telescope.builtin")
+
 key.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 key.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope live grep" })
+
+-- Harpoon
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<leader>hh", mark.add_file)
+vim.keymap.set("n", "<C-h>", ui.toggle_quick_menu)
+
+vim.keymap.set("n", "<leader>1", function()
+    ui.nav_file(1)
+end)
+vim.keymap.set("n", "<leader>2", function()
+    ui.nav_file(2)
+end)
+vim.keymap.set("n", "<leader>3", function()
+    ui.nav_file(3)
+end)
+vim.keymap.set("n", "<leader>4", function()
+    ui.nav_file(4)
+end)
