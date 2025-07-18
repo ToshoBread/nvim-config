@@ -1,7 +1,5 @@
 <div><h1 align="center">My Neovim Config</h1></div>
 
-## :electric_plug: Plugins:
-
 ### :pushpin: Core
 
 :gear: Plugin Manager: [Lazy.nvim](https://github.com/folke/lazy.nvim.git)
@@ -23,10 +21,9 @@
 
 ### :wrench: Utilities
 
+- [Omni-preview](https://github.com/SylvanFranklin/omni-preview.nvim)
+- [Trouble](https://github.com/folke/trouble.nvim)
 - [Undotree](https://github.com/mbbill/undotree)
-- [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
-- [Omnipreview](https://github.com/SylvanFranklin/omni-preview.nvim)
-- [Inc-rename](https://github.com/smjonas/inc-rename.nvim)
 - [Live-Server](https://github.com/barrett-ruth/live-server.nvim) (_For WebDev_)
 - [Vim-dadbod](https://github.com/tpope/vim-dadbod) (_For Database Queries_)
 
@@ -38,25 +35,29 @@
 ### :twisted_rightwards_arrows: Git Integration
 
 - [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+- [Vim-fugitive](https://github/tpope/vim-fugitive)
 
 ### :star2: UI / QoL
 
-- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
-- [Vim-commentary](https://github.com/tpope/vim-commentary)
-- [Surround](https://github.com/kylechui/nvim-surround)
-- [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Autotag](https://github.com/windwp/nvim-ts-autotag)
+- [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
+- [Inc-rename](https://github.com/smjonas/inc-rename.nvim)
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [Mini.ai](https://github.com/echasnovski/mini.ai)
-- [TreeSJ](https://github.com/Wansmer/treesj)
 - [Noice](https://github.com/folke/noice.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
+- [Nvim-recorder](https://github.com/chrisgrieser/nvim-recorder)
 - [Rainbow-Delimiters](https://github.com/HiPhish/rainbow-delimiters.nvim)
+- [Surround](https://github.com/kylechui/nvim-surround)
+- [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
+- [TreeSJ](https://github.com/Wansmer/treesj)
+- [Vim-commentary](https://github.com/tpope/vim-commentary)
 
 ### :art: Themes
 
+- [Catppuccin](https://github.com/catppuccin/nvim)
 - [Oldworld](https://github.com/dgox16/oldworld.nvim)
 - [Rose-pine](https://github.com/rose-pine/nvim)
-- [Catppuccin](https://github.com/catppuccin/nvim)
 - [Synthweave](https://github.com/samharju/synthweave.nvim)
 
 <br>
