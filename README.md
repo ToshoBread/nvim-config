@@ -39,6 +39,7 @@
 - [Undotree](https://github.com/mbbill/undotree)
 - [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
 - [Peek](https://github.com/toppair/peek.nvim) (_For Markdown_)
+- [Live-Server](https://github.com/barrett-ruth/live-server.nvim) (_For WebDev_)
 
 ### :bulb: LSP & CMP
 
