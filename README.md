@@ -4,7 +4,6 @@
 [![Python](https://skillicons.dev/icons?i=python)](https://www.python.org/)
 [![Java](https://skillicons.dev/icons?i=java)](https://www.java.com/)
 [![Bash](https://skillicons.dev/icons?i=bash)](https://www.gnu.org/software/bash/)
-[![Markdown](https://skillicons.dev/icons?i=md)](https://daringfireball.net/projects/markdown/)
 [![HTML](https://skillicons.dev/icons?i=html)](https://html.spec.whatwg.org/multipage/)
 [![CSS](https://skillicons.dev/icons?i=css)](https://www.w3.org/Style/CSS/Overview.en.html)
 [![SCSS](https://skillicons.dev/icons?i=scss)](https://sass-lang.com/)
@@ -12,6 +11,7 @@
 [![Typescript](https://skillicons.dev/icons?i=ts)](https://www.typescriptlang.org/)
 [![PHP](https://skillicons.dev/icons?i=php)](https://www.php.net/)
 [![MySQL](https://skillicons.dev/icons?i=mysql)](https://www.mysql.com/)
+[![Markdown](https://skillicons.dev/icons?i=md)](https://daringfireball.net/projects/markdown/)
 
 ## :electric_plug: Plugins:
 
@@ -66,6 +66,7 @@
 - [Autopairs](https://github.com/windp/nvim-autopairs)
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Autotag](https://github.com/windwp/nvim-ts-autotag)
+- [Transparent](https://githhub.com/xiyaowong/transparent.nvim)
 
 <br>
 

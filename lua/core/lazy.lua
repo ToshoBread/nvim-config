@@ -133,6 +133,7 @@ local plugins = {
 		"folke/noice.nvim",
 		event = "VeryLazy",
 	},
+	"xiyaowong/transparent.nvim",
 }
 
 require("lazy").setup(plugins, {})
