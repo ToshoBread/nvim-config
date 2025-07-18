@@ -38,9 +38,14 @@ local plugins = {
     },
 
     -- Utilities
-    "mbbill/undotree",
     "MunifTanjim/nui.nvim",
+    "mbbill/undotree",
     "VonHeikemen/searchbox.nvim",
+    {
+        "toppair/peek.nvim",
+        event = "VeryLazy",
+        build = "deno task --quiet build:fast",
+    },
 
     -- LSP & Autocompletion
     {
