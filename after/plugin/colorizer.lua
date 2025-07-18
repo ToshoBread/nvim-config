@@ -1,1 +1,2 @@
--- Insert Colorizer setup config
+vim.opt.termguicolors = true
+require("colorizer").setup()
