@@ -31,7 +31,22 @@ return {
 					find_files = {
 						theme = "dropdown",
 					},
+
+					live_grep = {
+						theme = "dropdown",
+					},
+
+					current_buffer_fuzzy_find = {
+						theme = "dropdown",
+					},
 				},
+
+				-- mappings = {
+				-- 	i = {
+				-- 		["<Tab>"] = require("telescope.actions").move_selection_next,
+				-- 		["<S-Tab>"] = require("telescope.actions").move_selection_previous,
+				-- 	},
+				-- },
 
 				extensions = {
 					["ui-select"] = {

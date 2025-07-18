@@ -1,6 +1,6 @@
 -- Incremental Rename
 remap("n", "<leader>rn", function()
-	return ":IncRename " .. vim.fn.expand("<cword>")
+    return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true })
 
 -- Git
@@ -31,19 +31,19 @@ remap("n", "<leader>hh", mark.add_file, { desc = "Add mark to harpoon" })
 remap("n", "<leader>hr", ui.toggle_quick_menu, { desc = "Open harpoon UI" })
 
 remap("n", "<leader>1", function()
-	ui.nav_file(1)
+    ui.nav_file(1)
 end, { desc = "Goto harpoon mark 1" })
 remap("n", "<leader>2", function()
-	ui.nav_file(2)
+    ui.nav_file(2)
 end, { desc = "Goto harpoon mark 2" })
 remap("n", "<leader>3", function()
-	ui.nav_file(3)
+    ui.nav_file(3)
 end, { desc = "Goto harpoon mark 3" })
 remap("n", "<leader>4", function()
-	ui.nav_file(4)
+    ui.nav_file(4)
 end, { desc = "Goto harpoon mark 4" })
 remap("n", "<leader>5", function()
-	ui.nav_file(5)
+    ui.nav_file(5)
 end, { desc = "Goto harpoon mark 5" })
 
 -- SearchBox
@@ -61,16 +61,10 @@ remap("n", "<leader>pc", ":OmniPreview stop<CR>")
 -- Live Server
 remap("n", "<leader>tl", vim.cmd.LiveServerToggle, { desc = "Toggle Live Server" })
 
--- Zen Mode
-remap("n", "<leader>z", vim.cmd.NoNeckPain, { desc = "Center buffer to screen" })
-
 -- Emmet Abbreviation
 remap(
-	{ "n", "v" },
-	"<leader>ew",
-	require("nvim-emmet").wrap_with_abbreviation,
-	{ desc = "Wrap selected text with Emmet" }
+    { "n", "v" },
+    "<leader>ew",
+    require("nvim-emmet").wrap_with_abbreviation,
+    { desc = "Wrap selected text with Emmet" }
 )
-
--- Floaterm
-remap("n", "<C-x>", vim.cmd.FloatermToggle, { desc = "Open Floating Terminal Buffer" })

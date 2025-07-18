@@ -39,7 +39,7 @@ return {
 				},
 
 				completion = {
-					documentation = { auto_show = true, window = { border = "rounded" } },
+					documentation = { auto_show = true, auto_show_delay_ms = 1000, window = { border = "rounded" } },
 					ghost_text = { enabled = false },
 					keyword = { range = "full" },
 					list = {
@@ -51,7 +51,8 @@ return {
 					accept = { auto_brackets = { enabled = true } },
 					menu = {
 						draw = {
-							columns = { { "kind_icon" }, { "label", gap = 1 } },
+							treesitter = { "lsp" },
+							columns = { { "kind_icon" }, { "label", gap = 1 }, { "source_name" } },
 							components = {
 								label = {
 									text = function(ctx)
@@ -92,6 +93,14 @@ return {
 				cmdline = {
 					enabled = true,
 					completion = { menu = { auto_show = true } },
+
+					keymap = {
+						preset = "none",
+						["<CR>"] = { "select_and_accept", "fallback" },
+						["<C-x>"] = { "hide", "fallback" },
+						["<C-j>"] = { "select_next", "fallback" },
+						["<C-k>"] = { "select_prev", "fallback" },
+					},
 				},
 
 				signature = { enabled = true },

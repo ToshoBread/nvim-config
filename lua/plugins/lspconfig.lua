@@ -16,7 +16,7 @@ return {
 
 			local capabilities = vim.tbl_deep_extend(
 				"force",
-				{},
+				-- {},
 				vim.lsp.protocol.make_client_capabilities(),
 				blink_cmp.get_lsp_capabilities()
 			)
@@ -30,6 +30,9 @@ return {
 					"lua_ls",
 					"marksman",
 					"tinymist",
+					"pylsp",
+					-- "rust_analyzer",
+					-- "jdtls",
 				},
 			})
 

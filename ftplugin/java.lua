@@ -1,11 +1,15 @@
 -- JDTLS (Java LSP) configuration
 local jdtls = require("jdtls")
-local home = vim.env.USERPROFILE or vim.env.HOME -- Get the home directory
-local mason_dir = "\\AppData\\Local\\nvim-data\\mason\\"
--- local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
--- local workspace_dir = home .. "\\.dev\\java\\" .. project_name
-local workspace_dir = vim.fn.getcwd()
+local util = require("lspconfig.util")
 local blink_cmp = require("blink.cmp")
+
+local home = vim.env.HOME -- Get the home directory
+local mason_dir = home .. "/.local/share/nvim/mason/" -- Linux
+-- local mason_dir = "/AppData/Local/nvim-data/mason/" -- Windows
+
+local root_dir = util.root_pattern(".git", "mvnw", "build.gradle", "pom.xml")(vim.fn.getcwd())
+local project_name = vim.fn.fnamemodify(root_dir, ":t")
+local workspace_dir = home .. "/.cache/jdtls/workspace/" .. project_name
 
 -- Determine OS
 local system_os = vim.fn.has("mac") == 1 and "mac"
@@ -15,13 +19,14 @@ local system_os = vim.fn.has("mac") == 1 and "mac"
 
 -- Java debug and test bundles
 local bundles = {
-	vim.fn.glob(home .. mason_dir .. "share\\java-debug-adapter\\com.microsoft.java.debug.plugin.jar"),
-	"C:\\Program Files (x86)\\Java\\lib\\mysql-connector-j-9.2.0.jar",
+	vim.fn.glob(mason_dir .. "packages/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
 }
+--     "C:/Program Files (x86)/Java/lib/mysql-connector-j-9.2.0.jar",
+-- }
 
-vim.list_extend(bundles, vim.split(vim.fn.glob(home .. mason_dir .. "share\\java-test\\*.jar", true), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob(mason_dir .. "share/java-test/*.jar", true), "/n"))
 
-local jdtls_launcher = vim.fn.glob(home .. mason_dir .. "share\\jdtls\\plugins\\org.eclipse.equinox.launcher_*.jar")
+local jdtls_launcher = vim.fn.glob(mason_dir .. "packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar")
 if jdtls_launcher == "" then
 	error("JDTLS launcher JAR not found! Check Mason installation.")
 end
@@ -35,7 +40,7 @@ local config = {
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
 		"-Dlog.protocol=true",
 		"-Dlog.level=ALL",
-		"-javaagent:" .. home .. mason_dir .. "share\\jdtls\\lombok.jar",
+		"-javaagent:" .. mason_dir .. "packages/jdtls/lombok.jar",
 		"-Xmx4g",
 		"--add-modules=ALL-SYSTEM",
 		"--add-opens",
@@ -47,7 +52,7 @@ local config = {
 		"-jar",
 		jdtls_launcher,
 		"-configuration",
-		home .. mason_dir .. "packages\\jdtls\\config_" .. system_os,
+		mason_dir .. "packages/jdtls/config_" .. system_os,
 		"-data",
 		workspace_dir,
 	},
@@ -56,18 +61,23 @@ local config = {
 	-- One dedicated LSP server & client will be started per unique root_dir
 	-- or vim.fn.getcwd(),
 
-	root_dir = require("jdtls.setup").find_root({ ".git", "build.gradle", "pom.xml" }),
-
+	-- root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "build.gradle", "pom.xml" }),
+	root_dir = root_dir,
 	settings = {
 		java = {
-			home = "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot",
+			-- home = "C:/Program Files/Eclipse Adoptium/jdk-21.0.6.7-hotspot",
+			home = "/usr/lib/jvm/java-24-openjdk",
 			eclipse = { downloadSources = true },
 			configuration = {
 				updateBuildConfiguration = "interactive",
 				runtimes = {
+					-- {
+					--     name = "JavaSE-21",
+					--     path = "C:/Program Files/Eclipse Adoptium/jdk-21.0.6.7-hotspot/",
+					-- },
 					{
-						name = "JavaSE-21",
-						path = "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot\\",
+						name = "JavaSE-24",
+						path = "/usr/lib/jvm/java-24-openjdk",
 					},
 				},
 			},

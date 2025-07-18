@@ -25,12 +25,13 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = vim.fn.expand("~") .. "\\.vim\\undodir"
+vim.opt.undodir = vim.fn.expand("~") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
+
 
 vim.opt.termguicolors = true
 
@@ -42,17 +43,15 @@ vim.opt.laststatus = 0
 vim.opt.signcolumn = "yes"
 
 vim.diagnostic.config({
-	virtual_text = true,
-	underline = false,
-	update_in_insert = false,
-	severity_sort = true,
-	signs = true,
-	virtual_lines = false,
+    virtual_text = true,
+    underline = false,
+    update_in_insert = false,
+    severity_sort = true,
+    signs = true,
+    virtual_lines = false,
 })
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.opt.updatetime = 60
-
-vim.o.shell = "nu"
