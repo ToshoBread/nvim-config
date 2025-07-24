@@ -1,6 +1,6 @@
 -- Incremental Rename
 remap("n", "<leader>rn", function()
-    return ":IncRename " .. vim.fn.expand("<cword>")
+	return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true })
 
 -- Git
@@ -24,26 +24,31 @@ remap("n", "<leader>ft", builtin.treesitter, { desc = "Find Treesitter symbols i
 remap("n", "<leader>fk", builtin.keymaps, { desc = "List all Normal Mode keymaps" })
 
 -- Harpoon
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
+local harpoon = require("harpoon")
+harpoon:setup()
 
-remap("n", "<leader>hh", mark.add_file, { desc = "Add mark to harpoon" })
-remap("n", "<leader>hr", ui.toggle_quick_menu, { desc = "Open harpoon UI" })
+remap("n", "<leader>hh", function()
+	harpoon:list():add()
+end, { desc = "Add mark to harpoon" })
+
+remap("n", "<leader>hr", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = "Open harpoon UI" })
 
 remap("n", "<leader>1", function()
-    ui.nav_file(1)
+	harpoon:list():select(1)
 end, { desc = "Goto harpoon mark 1" })
 remap("n", "<leader>2", function()
-    ui.nav_file(2)
+	harpoon:list():select(2)
 end, { desc = "Goto harpoon mark 2" })
 remap("n", "<leader>3", function()
-    ui.nav_file(3)
+	harpoon:list():select(3)
 end, { desc = "Goto harpoon mark 3" })
 remap("n", "<leader>4", function()
-    ui.nav_file(4)
+	harpoon:list():select(4)
 end, { desc = "Goto harpoon mark 4" })
 remap("n", "<leader>5", function()
-    ui.nav_file(5)
+	harpoon:list():select(5)
 end, { desc = "Goto harpoon mark 5" })
 
 -- SearchBox
@@ -63,8 +68,8 @@ remap("n", "<leader>tl", vim.cmd.LiveServerToggle, { desc = "Toggle Live Server"
 
 -- Emmet Abbreviation
 remap(
-    { "n", "v" },
-    "<leader>ew",
-    require("nvim-emmet").wrap_with_abbreviation,
-    { desc = "Wrap selected text with Emmet" }
+	{ "n", "v" },
+	"<leader>ew",
+	require("nvim-emmet").wrap_with_abbreviation,
+	{ desc = "Wrap selected text with Emmet" }
 )
