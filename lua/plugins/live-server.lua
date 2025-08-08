@@ -1,12 +1,9 @@
 return {
 	{
 		"barrett-ruth/live-server.nvim",
-		lazy = true,
+		build = "npm add -g live-server",
 		ft = { "html", "php", "js", "ts", "jsx", "tsx" },
-		build = "pnpm add -g live-server",
 		cmd = { "LiveServerStart", "LiveServerStop" },
-		config = function()
-			require("live-server").setup()
-		end,
+		config = true,
 	},
 }

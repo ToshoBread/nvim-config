@@ -32,10 +32,9 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 
-
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 16
 vim.opt.isfname:append("@-@")
 vim.opt.colorcolumn = "0"
 vim.opt.cmdheight = 0
@@ -43,12 +42,12 @@ vim.opt.laststatus = 0
 vim.opt.signcolumn = "yes"
 
 vim.diagnostic.config({
-    virtual_text = true,
-    underline = false,
-    update_in_insert = false,
-    severity_sort = true,
-    signs = true,
-    virtual_lines = false,
+	virtual_text = true,
+	underline = false,
+	update_in_insert = false,
+	severity_sort = true,
+	signs = true,
+	virtual_lines = false,
 })
 
 vim.opt.splitbelow = true

@@ -1,4 +1,4 @@
-<div><h1 align="center">My Neovim Config</h1></div>
+<h1 align="center">My Neovim Config</h1>
 
 ### :pushpin: Core
 
@@ -21,7 +21,6 @@
 
 ### :wrench: Utilities
 
-- [Floaterm](https://github.com/nvzone/floaterm)
 - [Omni-preview](https://github.com/SylvanFranklin/omni-preview.nvim)
 - [Trouble](https://github.com/folke/trouble.nvim)
 - [Undotree](https://github.com/mbbill/undotree)
@@ -30,13 +29,13 @@
 
 ### :bulb: LSP & Cmp
 
-- [Nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [Blink.cmp](https://github.com/saghen/blink.cmp)
+- [Nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
 ### :twisted_rightwards_arrows: Git Integration
 
 - [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
-- [Vim-fugitive](https://github/tpope/vim-fugitive)
+- [Vim-fugitive](https://github.com/tpope/vim-fugitive)
 
 ### :star2: UI / QoL
 
@@ -57,7 +56,8 @@
 ### :art: Themes
 
 - [Catppuccin](https://github.com/catppuccin/nvim)
-- [Oldworld](https://github.com/dgox16/oldworld.nvim)
+- [Gruvbox-material](https://github.com/sainnhe/gruvbox-material)
+- [Jetbrains](https://github.com/nickkadutskyi/jb.nvim)
 - [Rose-pine](https://github.com/rose-pine/nvim)
 
 <br>

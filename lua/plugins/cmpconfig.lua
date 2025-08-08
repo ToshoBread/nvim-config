@@ -70,11 +70,12 @@ return {
 				snippets = { preset = "luasnip" },
 
 				sources = {
-					default = { "lsp", "path", "snippets", "buffer" },
+					default = { "lsp", "path", "snippets" },
 					per_filetype = {
-						lua = { "lazydev", "lsp", "path", "snippets", "buffer" },
+						lua = { "lazydev", "lsp", "path", "snippets" },
 						sql = { "lsp", "buffer", "dadbod" },
 						mysql = { "lsp", "buffer", "dadbod" },
+						md = { "lsp", "snippets", "path", "buffer" },
 					},
 					providers = {
 						lazydev = {

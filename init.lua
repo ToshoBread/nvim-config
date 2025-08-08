@@ -27,7 +27,7 @@ require("lazy").setup("plugins", {
 require("core")
 
 -- Set colorscheme
-vim.cmd.colorscheme("gruvbox-material")
+vim.cmd.colorscheme("rose-pine")
 
 -- Oil.nvim hidden files
 _G.hidden_files = {
