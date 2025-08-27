@@ -17,6 +17,5 @@ return {
 		"typescriptreact",
 		"vue",
 	},
-	root_dir = vim.fn.getcwd(),
 	root_markers = { ".git" },
 }

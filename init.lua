@@ -28,24 +28,20 @@ require("core")
 
 -- Set colorscheme
 vim.cmd.colorscheme("rose-pine")
+vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "none" })
 
 -- Oil.nvim hidden files
 _G.hidden_files = {
 	".",
 	"lazy-lock",
-	"package-lock",
+	".git",
+	"LICENSE",
+
+	"package",
 	"node_modules",
-	".git/",
 	"build",
 	"dist",
-	"LICENSE",
-}
 
--- Notify when saving
-vim.api.nvim_create_autocmd("BufWrite", {
-	pattern = "*",
-	callback = function()
-		local currentBuf = vim.fn.expand("%:t")
-		vim.notify("Written to " .. currentBuf)
-	end,
-})
+	"composer",
+	"vendor",
+}

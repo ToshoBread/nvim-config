@@ -12,6 +12,15 @@ return {
 				background_colour = "#0f0f0f",
 				merge_duplicates = true,
 			})
+
+			-- Notify when saving
+			vim.api.nvim_create_autocmd("BufWrite", {
+				pattern = "*",
+				callback = function()
+					local currentBuf = vim.fn.expand("%:t")
+					vim.notify("Written to " .. currentBuf)
+				end,
+			})
 		end,
 	},
 }

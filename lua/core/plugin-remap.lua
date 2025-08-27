@@ -3,9 +3,6 @@ remap("n", "<leader>rn", function()
 	return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true })
 
--- Git
-remap("n", "<leader>gs", vim.cmd.Git, { desc = "Open Git" })
-
 -- Trouble
 remap("n", "<leader>xx", "<CMD>Trouble diagnostics toggle<CR>", { desc = "Workspace Diagnostics" })
 remap("n", "<leader>xX", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buffer Diagnostics" })
@@ -62,9 +59,6 @@ remap("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree pane" 
 -- Omni Preview
 remap("n", "<leader>po", ":OmniPreview start<CR>")
 remap("n", "<leader>pc", ":OmniPreview stop<CR>")
-
--- Live Server
-remap("n", "<leader>tl", vim.cmd.LiveServerToggle, { desc = "Toggle Live Server" })
 
 -- Emmet Abbreviation
 remap(

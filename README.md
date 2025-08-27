@@ -24,22 +24,19 @@
 - [Omni-preview](https://github.com/SylvanFranklin/omni-preview.nvim)
 - [Trouble](https://github.com/folke/trouble.nvim)
 - [Undotree](https://github.com/mbbill/undotree)
-- [Live-Server](https://github.com/barrett-ruth/live-server.nvim) (_For WebDev_)
-- [Vim-dadbod](https://github.com/tpope/vim-dadbod) (_For Database Queries_)
 
-### :bulb: LSP & Cmp
+### :bulb: Cmp
 
 - [Blink.cmp](https://github.com/saghen/blink.cmp)
-- [Nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
 ### :twisted_rightwards_arrows: Git Integration
 
 - [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
-- [Vim-fugitive](https://github.com/tpope/vim-fugitive)
 
 ### :star2: UI / QoL
 
 - [Autotag](https://github.com/windwp/nvim-ts-autotag)
+- [Autopairs](https://github.com/windwp/nvim-autopairs)
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Inc-rename](https://github.com/smjonas/inc-rename.nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)

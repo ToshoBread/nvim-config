@@ -10,8 +10,6 @@ remap("n", "<leader>a", "gg0VG", { desc = "Select the entire buffer" })
 -- Text Manipulation
 remap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected text up" })
 remap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text down" })
-remap("n", "<C-k>", ":m .-2<CR>==", { desc = "Move current line up" })
-remap("n", "<C-j>", ":m .+1<CR>==", { desc = "Move current line down" })
 
 remap({ "n", "v" }, "d", '"_d', { desc = "Delete to the void register" })
 
@@ -30,7 +28,3 @@ remap("n", "N", "Nzzzv", { desc = "Center cursor in backward incremental search"
 
 remap("n", "<C-u>", "<C-u>zzzv", { desc = "Center cursor while PgUp" })
 remap("n", "<C-d>", "<C-d>zzzv", { desc = "Center cursor while PgDown" })
-
--- Numerical Actions
-remap("n", "+", "<C-a>", { desc = "Increment" })
-remap("n", "-", "<C-x>", { desc = "Decrement" })

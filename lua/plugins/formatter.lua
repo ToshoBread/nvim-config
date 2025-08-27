@@ -5,7 +5,7 @@ return {
 		config = function()
 			local conform = require("conform")
 
-			local prettier_fmt = { "prettierd", "prettier", stop_after_first = true }
+			local prettier_fmt = { "prettierd", "prettier" }
 
 			conform.setup({
 				formatters_by_ft = {
@@ -15,6 +15,7 @@ return {
 					sh = { "shfmt" },
 					sql = { "sqlfmt" },
 					mysql = { "sqlfmt" },
+					php = { "pint" },
 					javascript = prettier_fmt,
 					typescript = prettier_fmt,
 					css = prettier_fmt,
@@ -26,14 +27,11 @@ return {
 				format_on_save = {
 					timeout_ms = 2500,
 					lsp_fallback = true,
+					async = false,
+					lsp_format = "fallback",
+					stop_after_first = true,
 				},
-			})
-
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				pattern = "*",
-				callback = function()
-					conform.format({ async = false, lsp_fallback = true })
-				end,
+				log_level = vim.log.levels.DEBUG,
 			})
 		end,
 	},

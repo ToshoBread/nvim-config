@@ -4,11 +4,10 @@ return {
 		event = "BufEnter",
 		dependencies = {
 			"rafamadriz/friendly-snippets",
-
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 			"xzbdmw/colorful-menu.nvim",
 			{ "olrtg/nvim-emmet", ft = "html" },
-			{ "Jezda1337/nvim-html-css", ft = { "html", "css", "scss" } },
+			{ "Jezda1337/nvim-html-css", ft = { "html", "css", "scss", "php" } },
 			{
 				"folke/lazydev.nvim",
 				ft = "lua",
@@ -16,6 +15,17 @@ return {
 					library = {
 						{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 					},
+				},
+			},
+			{
+				"saghen/blink.compat",
+				-- use v2.* for blink.cmp v1.*
+				version = "2.*",
+				-- lazy.nvim will automatically load the plugin when it's required by blink.cmp
+				lazy = true,
+				-- make sure to set opts so that lazy.nvim calls blink.compat's setup
+				opts = {
+					debug = true,
 				},
 			},
 		},
@@ -39,9 +49,9 @@ return {
 				},
 
 				completion = {
-					documentation = { auto_show = true, auto_show_delay_ms = 1000, window = { border = "rounded" } },
+					documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = "rounded" } },
 					ghost_text = { enabled = false },
-					keyword = { range = "full" },
+					keyword = { range = "prefix" },
 					list = {
 						selection = {
 							preselect = true,
@@ -52,7 +62,7 @@ return {
 					menu = {
 						draw = {
 							treesitter = { "lsp" },
-							columns = { { "kind_icon" }, { "label", gap = 1 }, { "source_name" } },
+							columns = { { "kind_icon" }, { "label", gap = 1 } },
 							components = {
 								label = {
 									text = function(ctx)
@@ -70,7 +80,7 @@ return {
 				snippets = { preset = "luasnip" },
 
 				sources = {
-					default = { "lsp", "path", "snippets" },
+					default = { "lsp", "path", "snippets", "buffer", "html-css" },
 					per_filetype = {
 						lua = { "lazydev", "lsp", "path", "snippets" },
 						sql = { "lsp", "buffer", "dadbod" },
@@ -87,6 +97,10 @@ return {
 							name = "DadBod",
 							module = "vim_dadbod_completion.blink",
 							score_offset = -1,
+						},
+						["html-css"] = {
+							name = "html-css",
+							module = "blink.compat.source",
 						},
 					},
 				},
@@ -108,5 +122,6 @@ return {
 				fuzzy = { implementation = "prefer_rust" },
 			})
 		end,
+		opts_extend = { "sources.default" },
 	},
 }
