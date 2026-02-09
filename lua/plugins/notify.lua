@@ -5,7 +5,7 @@ return {
 		config = function()
 			require("notify").setup({
 				render = "minimal",
-				timeout = 2500,
+				timeout = 1250,
 				maximum_width = 50,
 				minimum_width = 10,
 				top_down = true,

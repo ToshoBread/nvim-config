@@ -1,5 +1,5 @@
 return {
 	cmd = { "intelephense", "--stdio" },
-	filetypes = { "php" },
+	filetypes = { "php", "blade" },
 	-- root_markers = { ".git", "composer.json" },
 }

@@ -1,9 +1,9 @@
 return {
 	{
-		"neovim/nvim-lspconfig",
+		"williamboman/mason.nvim",
 		event = "BufEnter",
 		dependencies = {
-			"williamboman/mason.nvim",
+			"neovim/nvim-lspconfig",
 			"williamboman/mason-lspconfig.nvim",
 			"saghen/blink.cmp",
 			{ "mfussenegger/nvim-jdtls", ft = "java" },
@@ -16,14 +16,12 @@ return {
 
 			local capabilities = vim.tbl_deep_extend(
 				"force",
-				-- {},
 				vim.lsp.protocol.make_client_capabilities(),
 				blink_cmp.get_lsp_capabilities()
 			)
 
 			mason.setup()
 			mason_lspconfig.setup({
-				automatic_installation = true,
 				automatic_enable = true,
 
 				ensure_installed = {
@@ -39,17 +37,17 @@ return {
 			vim.lsp.config("*", {
 				root_dir = vim.fn.getcwd(),
 				capabilities = capabilities,
-				on_attach = function()
-					vim.notify(vim.lsp.get_clients()[1].name .. " has attached to " .. vim.fn.expand("%:t"))
-				end,
 			})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(e)
 					local opts = { buffer = e.buf }
-					remap("n", "gd", vim.lsp.buf.definition, opts)
+					local builtin = require("telescope.builtin")
 					remap("n", "K", vim.lsp.buf.hover, opts)
-					remap("n", "gr", vim.lsp.buf.references, opts)
+					remap("n", "gd", vim.lsp.buf.definition, opts)
+					remap("n", "gD", vim.lsp.buf.declaration, opts)
+					remap("n", "gi", builtin.lsp_implementations, opts)
+					remap("n", "gr", builtin.lsp_references, opts)
 					remap("n", "<leader>rn", vim.lsp.buf.rename, opts)
 					remap("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 				end,

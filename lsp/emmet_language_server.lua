@@ -16,6 +16,8 @@ return {
 		"templ",
 		"typescriptreact",
 		"vue",
+		"php",
+		"blade",
 	},
 	root_markers = { ".git" },
 }

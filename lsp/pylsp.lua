@@ -7,6 +7,8 @@ return {
 				jedi_completion = { enabled = true },
 				pylsp_mypy = { enabled = true },
 				pylsp_rope = { enabled = true },
+				pycodestyle = { enabled = false },
+				pyflakes = { enabled = false },
 				ruff = { enabled = true },
 				autopep8 = { enabled = false },
 				yapf = { enabled = false },

@@ -7,7 +7,8 @@ return {
 			local devicons = require("nvim-web-devicons")
 			local recorder = require("recorder")
 
-			vim.api.nvim_set_hl(0, "LualineFilenameWithIcon", { bg = "NONE", fg = "#e0def4" })
+			vim.api.nvim_set_hl(0, "LualineFilenameWithIcon", { bg = "NONE", fg = "#E0DEF4" })
+			-- vim.api.nvim_set_hl(0, "LualineFilenameWithIcon", { bg = "NONE", fg = "#4F3829" })
 
 			local function filenameAndIcon()
 				local filename = vim.fn.expand("%:t")
@@ -52,7 +53,8 @@ return {
 				},
 
 				sections = {
-					lualine_a = { { "mode", icons_enabled = true, icon = "" } },
+					-- lualine_a = { { "mode", icons_enabled = true, icon = "" } },
+					lualine_a = { "mode" },
 					lualine_b = { "diagnostics", "branch", "diff" },
 					lualine_c = { filenameAndIcon },
 					lualine_x = { "lsp_status" },

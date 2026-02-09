@@ -66,8 +66,8 @@ return {
 				view_options = {
 					show_hidden = false,
 					is_hidden_file = function(name, bufnr)
-						-- hidden_files table is in init.lua
-						for _, hidden_file in ipairs(hidden_files) do
+						-- oilignore table is in init.lua
+						for _, hidden_file in ipairs(oilignore) do
 							if
 								name:match("^" .. vim.pesc(hidden_file)) -- Start of the name
 								or name:match(vim.pesc(hidden_file) .. "$") -- End of the name

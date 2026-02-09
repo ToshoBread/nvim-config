@@ -38,8 +38,8 @@ return {
 					preset = "none",
 					["<CR>"] = { "select_and_accept", "fallback" },
 					["<C-x>"] = { "hide", "fallback" },
-					["<C-j>"] = { "select_next", "fallback" },
-					["<C-k>"] = { "select_prev", "fallback" },
+					["<C-n>"] = { "select_next", "fallback" },
+					["<C-p>"] = { "select_prev", "fallback" },
 					["<Tab>"] = { "snippet_forward", "fallback" },
 					["<S-Tab>"] = { "snippet_backward", "fallback" },
 				},
@@ -50,7 +50,7 @@ return {
 
 				completion = {
 					documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = "rounded" } },
-					ghost_text = { enabled = false },
+					ghost_text = { enabled = true },
 					keyword = { range = "prefix" },
 					list = {
 						selection = {
@@ -62,7 +62,7 @@ return {
 					menu = {
 						draw = {
 							treesitter = { "lsp" },
-							columns = { { "kind_icon" }, { "label", gap = 1 } },
+							columns = { { "kind_icon" }, { "label", gap = 1 }, { "kind" } },
 							components = {
 								label = {
 									text = function(ctx)
@@ -80,12 +80,15 @@ return {
 				snippets = { preset = "luasnip" },
 
 				sources = {
-					default = { "lsp", "path", "snippets", "buffer", "html-css" },
+					default = { "lsp", "snippets", "path" },
 					per_filetype = {
-						lua = { "lazydev", "lsp", "path", "snippets" },
-						sql = { "lsp", "buffer", "dadbod" },
-						mysql = { "lsp", "buffer", "dadbod" },
-						md = { "lsp", "snippets", "path", "buffer" },
+						html = { inherit_defaults = true, "buffer" },
+						lua = { inherit_defaults = true, "lazydev" },
+						sql = { inherit_defaults = true, "buffer" },
+						mysql = { inherit_defaults = true, "buffer" },
+						markdown = { inherit_defaults = true, "buffer" },
+						php = { inherit_defaults = true, "laravel" },
+						blade = { inherit_defaults = true, "laravel" },
 					},
 					providers = {
 						lazydev = {
@@ -93,14 +96,18 @@ return {
 							module = "lazydev.integrations.blink",
 							score_offset = 100,
 						},
-						dadbod = {
-							name = "DadBod",
-							module = "vim_dadbod_completion.blink",
-							score_offset = -1,
-						},
-						["html-css"] = {
-							name = "html-css",
-							module = "blink.compat.source",
+						-- dadbod = {
+						-- 	name = "DadBod",
+						-- 	module = "vim_dadbod_completion.blink",
+						-- 	score_offset = -1,
+						-- },
+						-- ["html-css"] = {
+						-- 	name = "html-css",
+						-- 	module = "blink.compat.source",
+						-- },
+						laravel = {
+							name = "laravel",
+							module = "laravel.blink_source",
 						},
 					},
 				},
@@ -113,8 +120,8 @@ return {
 						preset = "none",
 						["<CR>"] = { "select_and_accept", "fallback" },
 						["<C-x>"] = { "hide", "fallback" },
-						["<C-j>"] = { "select_next", "fallback" },
-						["<C-k>"] = { "select_prev", "fallback" },
+						["<C-n>"] = { "select_next", "fallback" },
+						["<C-p>"] = { "select_prev", "fallback" },
 					},
 				},
 

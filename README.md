@@ -6,8 +6,6 @@
 
 :package: Package Manager: [Mason](https://github.com/williamboman/mason.nvim)
 
-:mag_right: Parser: [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-
 :pencil2: Formatter: [Conform](https://github.com/stevearc/conform.nvim)
 
 :file_folder: File Explorer: [Oil.nvim](https://github.com/stevearc/oil.nvim)
@@ -24,6 +22,8 @@
 - [Omni-preview](https://github.com/SylvanFranklin/omni-preview.nvim)
 - [Trouble](https://github.com/folke/trouble.nvim)
 - [Undotree](https://github.com/mbbill/undotree)
+- [Kulala](https://github.com/mistweaverco/kulala.nvim)
+- [Laravel](https://github.com/adibhanna/laravel.nvim)
 
 ### :bulb: Cmp
 
@@ -38,23 +38,24 @@
 - [Autotag](https://github.com/windwp/nvim-ts-autotag)
 - [Autopairs](https://github.com/windwp/nvim-autopairs)
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
-- [Inc-rename](https://github.com/smjonas/inc-rename.nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
-- [Mini.ai](https://github.com/echasnovski/mini.ai)
+- [Mini.ai](https://github.com/nvim-mini/mini.ai)
+- [Mini.comment](https://github.com/nvim-mini/mini.comment)
 - [Noice](https://github.com/folke/noice.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
 - [Nvim-recorder](https://github.com/chrisgrieser/nvim-recorder)
 - [Rainbow-Delimiters](https://github.com/HiPhish/rainbow-delimiters.nvim)
-- [Surround](https://github.com/kylechui/nvim-surround)
+- [Nvim-Surround](https://github.com/kylechui/nvim-surround)
 - [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
+- [Tabout](https://github.com/abecodes/tabout.nvim)
+- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [TreeSJ](https://github.com/Wansmer/treesj)
-- [Vim-commentary](https://github.com/tpope/vim-commentary)
 
 ### :art: Themes
 
 - [Catppuccin](https://github.com/catppuccin/nvim)
 - [Gruvbox-material](https://github.com/sainnhe/gruvbox-material)
-- [Jetbrains](https://github.com/nickkadutskyi/jb.nvim)
+- [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
 - [Rose-pine](https://github.com/rose-pine/nvim)
 
 <br>
