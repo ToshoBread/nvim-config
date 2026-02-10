@@ -36,20 +36,21 @@
 ### :star2: UI / QoL
 
 - [Autotag](https://github.com/windwp/nvim-ts-autotag)
-- [Autopairs](https://github.com/windwp/nvim-autopairs)
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [Mini.ai](https://github.com/nvim-mini/mini.ai)
 - [Mini.comment](https://github.com/nvim-mini/mini.comment)
+- [Mini.cursorword](https://github.com/nvim-mini/mini.cursorword)
+- [Mini.pairs](https://github.com/nvim-mini/mini.pairs)
+- [Mini.splitjoin](https://github.com/nvim-mini/mini.splitjoin)
+- [Mini.surround](https://github.com/nvim-mini/mini.surround)
 - [Noice](https://github.com/folke/noice.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
 - [Nvim-recorder](https://github.com/chrisgrieser/nvim-recorder)
 - [Rainbow-Delimiters](https://github.com/HiPhish/rainbow-delimiters.nvim)
-- [Nvim-Surround](https://github.com/kylechui/nvim-surround)
 - [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
 - [Tabout](https://github.com/abecodes/tabout.nvim)
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [TreeSJ](https://github.com/Wansmer/treesj)
 
 ### :art: Themes
 

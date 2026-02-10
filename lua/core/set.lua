@@ -21,11 +21,17 @@ vim.opt.breakindent = true
 vim.opt.smarttab = true
 vim.opt.backspace = { "start", "eol", "indent" }
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = true
+vim.opt.foldlevelstart = 99
+vim.opt.foldnestmax = 5
+
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = vim.fn.expand("~") .. "/.vim/undodir"
+vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
