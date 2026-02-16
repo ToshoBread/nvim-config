@@ -10,7 +10,7 @@
 
 :file_folder: File Explorer: [Oil.nvim](https://github.com/stevearc/oil.nvim)
 
-<br>
+#
 
 ### :rocket: Navigation
 
@@ -50,13 +50,10 @@
 - [Rainbow-Delimiters](https://github.com/HiPhish/rainbow-delimiters.nvim)
 - [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
 - [Tabout](https://github.com/abecodes/tabout.nvim)
-- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter/tree/master)
 
-### :art: Themes
+### :art: Theme
 
-- [Catppuccin](https://github.com/catppuccin/nvim)
-- [Gruvbox-material](https://github.com/sainnhe/gruvbox-material)
-- [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
 - [Rose-pine](https://github.com/rose-pine/nvim)
 
 <br>
