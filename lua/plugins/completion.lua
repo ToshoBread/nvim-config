@@ -53,7 +53,7 @@ return {
 
 				completion = {
 					documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = "rounded" } },
-					ghost_text = { enabled = true },
+					ghost_text = { enabled = false },
 					keyword = { range = "prefix" },
 					list = {
 						selection = {
@@ -83,7 +83,7 @@ return {
 				snippets = { preset = "luasnip" },
 
 				sources = {
-					default = { "lsp", "snippets", "path" },
+					default = { "snippets", "lsp", "path" },
 					per_filetype = {
 						html = { inherit_defaults = true, "buffer" },
 						lua = { inherit_defaults = true, "lazydev" },
