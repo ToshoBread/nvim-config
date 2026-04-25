@@ -32,7 +32,7 @@ vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "none" })
 
 -- Oil.nvim hidden files
 _G.oilignore = {
-	".",
+	"..",
 	"lazy-lock",
 	".git",
 	"LICENSE",

@@ -6,7 +6,7 @@
 
 :package: Package Manager: [Mason](https://github.com/williamboman/mason.nvim)
 
-:pencil2: Formatter: [Conform](https://github.com/stevearc/conform.nvim)
+:pencil2: Formatter Manager: [Conform](https://github.com/stevearc/conform.nvim)
 
 :file_folder: File Explorer: [Oil.nvim](https://github.com/stevearc/oil.nvim)
 
