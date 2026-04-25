@@ -12,6 +12,7 @@ return {
 			-- { "<leader>lc", ":Composer<cr>", desc = "Composer" },
 			{ "<leader>lr", ":LaravelRoute<cr>", desc = "Laravel Routes" },
 			{ "<leader>lm", ":LaravelMake<cr>", desc = "Laravel Make" },
+			{ "<leader>lg", ":LaravelGoto<cr>", desc = "Laravel GoTo" },
 		},
 		config = function()
 			require("laravel").setup()

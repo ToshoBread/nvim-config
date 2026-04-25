@@ -5,6 +5,7 @@ return {
 			{ "<leader>Rs", desc = "Send request" },
 			{ "<leader>Ra", desc = "Send all requests" },
 			{ "<leader>Rb", desc = "Open scratchpad" },
+			{ "<leader>Rj", desc = "Open cookie jar" },
 		},
 		ft = { "http", "rest" },
 		opts = {
