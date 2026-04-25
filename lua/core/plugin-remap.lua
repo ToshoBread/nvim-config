@@ -49,3 +49,7 @@ Remap("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree pane" 
 -- Omni Preview
 Remap("n", "<leader>po", ":OmniPreview start<CR>", { desc = "Open preview" })
 Remap("n", "<leader>pc", ":OmniPreview stop<CR>", { desc = "Close preview" })
+
+-- Gitsigns
+Remap("n", "<leader>gb", "<CMD>Gitsigns blame<CR>", { desc = "Open Git blame pane" })
+Remap("n", "<leader>gd", "<CMD>Gitsigns diffthis<CR>", { desc = "Open Git diff pane" })

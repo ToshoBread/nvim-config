@@ -3,41 +3,55 @@ return {
 		"williamboman/mason.nvim",
 		event = "BufEnter",
 		dependencies = {
-			"neovim/nvim-lspconfig",
-			"williamboman/mason-lspconfig.nvim",
 			"saghen/blink.cmp",
 			{ "mfussenegger/nvim-jdtls", ft = "java" },
 		},
 
 		config = function()
 			local mason = require("mason")
-			local mason_lspconfig = require("mason-lspconfig")
-			local blink_cmp = require("blink.cmp")
+			local registry = require("mason-registry")
+			local blink = require("blink.cmp")
 
-			local capabilities = vim.tbl_deep_extend(
-				"force",
-				vim.lsp.protocol.make_client_capabilities(),
-				blink_cmp.get_lsp_capabilities()
-			)
+			local ensureInstalled = {
+				"lua_ls",
+				"marksman",
+				"tinymist",
+				"pylsp",
+				-- "rust_analyzer",
+				-- "jdtls",
+			}
+
+			local capabilities =
+				vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), blink.get_lsp_capabilities())
 
 			mason.setup()
-			mason_lspconfig.setup({
-				automatic_enable = true,
 
-				ensure_installed = {
-					"lua_ls",
-					"marksman",
-					"tinymist",
-					"pylsp",
-					-- "rust_analyzer",
-					-- "jdtls",
-				},
-			})
+			local installedLSPs = vim.iter(registry.get_installed_packages()):fold({}, function(arr, package)
+				table.insert(arr, package.spec.neovim and package.spec.neovim.lspconfig)
+				return arr
+			end)
+
+			local installedDict = {}
+			for _, lsp in ipairs(installedLSPs) do
+				installedDict[lsp] = true
+			end
+
+			registry.refresh(function()
+				for _, lsp in ipairs(ensureInstalled) do
+					if not installedDict[lsp] then
+						registry.get_package(lsp):install()
+						vim.notify(string.format("%s has been installed", lsp))
+					end
+				end
+			end)
+
 
 			vim.lsp.config("*", {
 				root_dir = vim.fn.getcwd(),
 				capabilities = capabilities,
 			})
+
+			vim.lsp.enable(installedLSPs)
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(e)

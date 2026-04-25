@@ -1,13 +1,15 @@
 -- JDTLS (Java LSP) configuration
 local jdtls = require("jdtls")
-local util = require("lspconfig.util")
-local blink_cmp = require("blink.cmp")
+local blink = require("blink.cmp")
 
 local home = vim.env.HOME -- Get the home directory
-local mason_dir = home .. "/.local/share/nvim/mason/" -- Linux
+
+local mason_dir = vim.fn.stdpath("data") .. "/mason/" -- Linux
+-- local mason_dir = home .. "/.local/share/nvim/mason/" -- Linux
 -- local mason_dir = "/AppData/Local/nvim-data/mason/" -- Windows
 
-local root_dir = util.root_pattern(".git", "mvnw", "build.gradle", "pom.xml")(vim.fn.getcwd())
+-- local root_dir = util.root_pattern(".git", "mvnw", "build.gradle", "pom.xml")(vim.fn.getcwd())
+local root_dir = vim.fs.dirname(vim.fs.find({ ".git", "mvnw", "build.gradle", "pom.xml" }, { upward = true })[1])
 local project_name = vim.fn.fnamemodify(root_dir, ":t")
 local workspace_dir = home .. "/.cache/jdtls/workspace/" .. project_name
 
@@ -122,7 +124,7 @@ local config = {
 		"force",
 		{},
 		vim.lsp.protocol.make_client_capabilities(),
-		blink_cmp.get_lsp_capabilities()
+		blink.get_lsp_capabilities()
 	),
 
 	flags = { allow_incremental_sync = true },
