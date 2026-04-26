@@ -44,4 +44,5 @@ _G.oilignore = {
 
 	"composer",
 	"vendor",
+	"vscode",
 }

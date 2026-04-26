@@ -4,7 +4,6 @@ return {
 		event = "BufRead",
 		config = function()
 			local conform = require("conform")
-			local prettier_fmt = { "prettierd", "prettier" }
 
 			conform.setup({
 				formatters_by_ft = {
@@ -16,15 +15,15 @@ return {
 					mysql = { "sqlfmt" },
 					php = { "pint" },
 					blade = { "blade-formatter" },
-					javascript = vim.fn.extend(prettier_fmt, { "eslint_d" }),
-					typescript = vim.fn.extend(prettier_fmt, { "eslint_d" }),
-					css = prettier_fmt,
-					scss = prettier_fmt,
-					html = prettier_fmt,
-					json = { "fixjson" },
-					jsonc = { "fixjson" },
-					markdown = prettier_fmt,
-					astro = prettier_fmt,
+					javascript = { "oxfmt", "eslint_d" },
+					typescript = { "oxfmt", "eslint_d" },
+					css = { "oxfmt" },
+					scss = { "oxfmt" },
+					html = { "oxfmt" },
+					json = { "oxfmt" },
+					jsonc = { "oxfmt" },
+					markdown = { "oxfmt" },
+					astro = { "oxfmt" },
 					gdscript = { "gdformat" },
 				},
 				format_on_save = {
