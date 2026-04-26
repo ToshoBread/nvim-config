@@ -1,6 +1,6 @@
 return {
 	cmd = { "phpactor", "language-server" },
-	filetypes = { "php", "blade" },
+	filetypes = { "php" },
 	settings = {
 		phpactor = {
 			language_server_phpstan = { enabled = false },

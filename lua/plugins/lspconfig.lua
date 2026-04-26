@@ -27,7 +27,9 @@ return {
 			mason.setup()
 
 			local installedLSPs = vim.iter(registry.get_installed_packages()):fold({}, function(arr, package)
-				table.insert(arr, package.spec.neovim and package.spec.neovim.lspconfig)
+				if not vim.tbl_contains(package.spec.categories, "Formatter") then
+					table.insert(arr, package.spec.neovim and package.spec.neovim.lspconfig)
+				end
 				return arr
 			end)
 
@@ -45,12 +47,21 @@ return {
 				end
 			end)
 
-
 			vim.lsp.config("*", {
 				root_dir = vim.fn.getcwd(),
 				capabilities = capabilities,
 			})
 
+			vim.filetype.add({
+				extension = {
+					blade = "blade",
+				},
+				pattern = {
+					[".*%.blade%.php"] = "blade",
+				},
+			})
+
+			vim.lsp.set_log_level("OFF")
 			vim.lsp.enable(installedLSPs)
 
 			vim.api.nvim_create_autocmd("LspAttach", {

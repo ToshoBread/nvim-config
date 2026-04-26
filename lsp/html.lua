@@ -14,8 +14,5 @@ return {
 			javascript = true,
 		},
 		provideFormatter = true,
-		includeLanguages = {
-			blade = "html",
-		},
 	},
 }

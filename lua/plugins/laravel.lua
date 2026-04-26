@@ -16,6 +16,16 @@ return {
 		},
 		config = function()
 			require("laravel").setup()
+
+			local parserConfig = require("nvim-treesitter.parsers").get_parser_configs()
+			parserConfig.blade = {
+				install_info = {
+					url = "https://github.com/EmranMR/tree-sitter-blade",
+					files = { "src/parser.c" },
+					branch = "main",
+				},
+				filetype = "blade",
+			}
 		end,
 	},
 }
