@@ -23,11 +23,15 @@ return {
 					return ""
 				end
 
+				local modified = vim.bo.modified and "󰣕" or ""
+				-- ⬤
+
 				return string.format(
-					"%%#%s#%s%%#LualineFilenameWithIcon# %s",
+					"%%#%s#%s%%#LualineFilenameWithIcon# %s %s",
 					icon_highlight or "LualineFilenameWithIcon",
 					icon,
-					filename
+					filename,
+					modified
 				)
 			end
 
@@ -52,6 +56,7 @@ return {
 					},
 				},
 
+				-- ●
 				sections = {
 					-- lualine_a = { { "mode", icons_enabled = true, icon = "" } },
 					lualine_a = { "mode" },
