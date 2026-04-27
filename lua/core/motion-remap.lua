@@ -11,7 +11,8 @@ Remap("n", "<leader>a", "gg0VG", { desc = "Select the entire buffer" })
 Remap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected text up" })
 Remap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text down" })
 
-Remap({ "n", "v" }, "x", '"_x', { desc = "Delete to void register" })
+Remap({ "n", "v" }, "d", '"_d', { desc = "Delete to void register" })
+Remap("n", "x", '"_x', { desc = "Delete character to void register" })
 Remap({ "n", "v" }, "c", '"_c', { desc = "Change motion doesn't yank" })
 
 Remap({ "n", "v" }, "<leader>yy", '"+y', { desc = "Copy to system clipboard" })
