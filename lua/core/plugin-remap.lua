@@ -53,3 +53,27 @@ Remap("n", "<leader>pc", ":OmniPreview stop<CR>", { desc = "Close preview" })
 -- Gitsigns
 Remap("n", "<leader>gb", "<CMD>Gitsigns blame<CR>", { desc = "Open Git blame pane" })
 Remap("n", "<leader>gd", "<CMD>Gitsigns diffthis<CR>", { desc = "Open Git diff pane" })
+
+-- Note
+Remap("n", "<leader>n", "<CMD>Note<CR>", { desc = "Create/Open the Day's Note" })
+
+-- No Neck Pain
+local zen = require("no-neck-pain")
+Remap("n", "<leader>z", function()
+	vim.cmd("NoNeckPain")
+
+	vim.cmd("Gitsigns toggle_signs")
+	if zen.state and zen.state.enabled then
+		vim.cmd("set number")
+		vim.cmd("set relativenumber")
+	else
+		vim.cmd("set nonumber")
+		vim.cmd("set norelativenumber")
+	end
+end, { desc = "Zen Mode" })
+
+-- Screenkey
+local screenkey = require("screenkey")
+Remap("n", "<leader>sk", function()
+	screenkey.toggle_statusline_component()
+end, { desc = "Toggle screenkey" })

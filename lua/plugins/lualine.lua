@@ -6,6 +6,7 @@ return {
 		config = function()
 			local devicons = require("nvim-web-devicons")
 			local recorder = require("recorder")
+			local screenkey = require("screenkey")
 
 			vim.api.nvim_set_hl(0, "LualineFilenameWithIcon", { bg = "NONE", fg = "#E0DEF4" })
 			-- vim.api.nvim_set_hl(0, "LualineFilenameWithIcon", { bg = "NONE", fg = "#4F3829" })
@@ -16,7 +17,7 @@ return {
 				local icon, icon_highlight = devicons.get_icon(filename, extension)
 
 				if icon == nil then
-					icon = "󰡯"
+					icon = ""
 				end
 
 				if filename == "" then
@@ -24,7 +25,6 @@ return {
 				end
 
 				local modified = vim.bo.modified and "󰣕" or ""
-				-- ⬤
 
 				return string.format(
 					"%%#%s#%s%%#LualineFilenameWithIcon# %s %s",
@@ -56,12 +56,24 @@ return {
 					},
 				},
 
-				-- ●
 				sections = {
 					-- lualine_a = { { "mode", icons_enabled = true, icon = "" } },
 					lualine_a = { "mode" },
 					lualine_b = { "diagnostics", "branch", "diff" },
-					lualine_c = { filenameAndIcon },
+					lualine_c = {
+						{
+
+							filenameAndIcon,
+							component_separators = "",
+						},
+						{
+							"%=",
+							component_separators = "",
+						},
+						function()
+							return screenkey.get_keys()
+						end,
+					},
 					lualine_x = { "lsp_status" },
 					lualine_y = { recorder.displaySlots, recorder.recordingStatus },
 					lualine_z = { "progress" },
