@@ -30,9 +30,18 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- Autosave when leaving insert
-vim.api.nvim_create_autocmd("InsertLeave", {
+-- -- Autosave when leaving insert
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+-- 	callback = function()
+-- 		vim.cmd("wa")
+-- 	end,
+-- })
+
+-- Refresh icon highlighting after LSP events
+vim.api.nvim_create_autocmd({ "LspAttach", "DiagnosticChanged" }, {
 	callback = function()
-		vim.cmd("wa")
+		vim.schedule(function()
+			require("nvim-web-devicons").refresh()
+		end)
 	end,
 })

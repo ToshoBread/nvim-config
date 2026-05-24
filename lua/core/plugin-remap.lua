@@ -1,3 +1,18 @@
+-- LSP
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(e)
+		local opts = { buffer = e.buf }
+		local builtin = require("telescope.builtin")
+		Remap("n", "K", vim.lsp.buf.hover, opts)
+		Remap("n", "gd", vim.lsp.buf.definition, opts)
+		Remap("n", "gD", vim.lsp.buf.declaration, opts)
+		Remap("n", "gi", builtin.lsp_implementations, opts)
+		Remap("n", "gr", builtin.lsp_references, opts)
+		Remap("n", "<leader>rn", vim.lsp.buf.rename, opts)
+		Remap("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+	end,
+})
+
 -- Trouble
 Remap("n", "<leader>dx", "<CMD>Trouble diagnostics toggle<CR>", { desc = "Workspace Diagnostics" })
 Remap("n", "<leader>dX", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buffer Diagnostics" })
@@ -50,6 +65,9 @@ Remap("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree pane" 
 Remap("n", "<leader>po", ":OmniPreview start<CR>", { desc = "Open preview" })
 Remap("n", "<leader>pc", ":OmniPreview stop<CR>", { desc = "Close preview" })
 
+-- Fugitive
+Remap("n", "<leader>gt", "<CMD>tab Git<CR>", { desc = "Open Git stage window" })
+
 -- Gitsigns
 Remap("n", "<leader>gb", "<CMD>Gitsigns blame<CR>", { desc = "Open Git blame pane" })
 Remap("n", "<leader>gd", "<CMD>Gitsigns diffthis<CR>", { desc = "Open Git diff pane" })
@@ -58,18 +76,9 @@ Remap("n", "<leader>gd", "<CMD>Gitsigns diffthis<CR>", { desc = "Open Git diff p
 Remap("n", "<leader>n", "<CMD>Note<CR>", { desc = "Create/Open the Day's Note" })
 
 -- No Neck Pain
-local zen = require("no-neck-pain")
 Remap("n", "<leader>z", function()
 	vim.cmd("NoNeckPain")
-
 	vim.cmd("Gitsigns toggle_signs")
-	if zen.state and zen.state.enabled then
-		vim.cmd("set number")
-		vim.cmd("set relativenumber")
-	else
-		vim.cmd("set nonumber")
-		vim.cmd("set norelativenumber")
-	end
 end, { desc = "Zen Mode" })
 
 -- Screenkey

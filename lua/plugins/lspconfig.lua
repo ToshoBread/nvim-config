@@ -63,20 +63,6 @@ return {
 
 			vim.lsp.set_log_level("OFF")
 			vim.lsp.enable(installedLSPs)
-
-			vim.api.nvim_create_autocmd("LspAttach", {
-				callback = function(e)
-					local opts = { buffer = e.buf }
-					local builtin = require("telescope.builtin")
-					Remap("n", "K", vim.lsp.buf.hover, opts)
-					Remap("n", "gd", vim.lsp.buf.definition, opts)
-					Remap("n", "gD", vim.lsp.buf.declaration, opts)
-					Remap("n", "gi", builtin.lsp_implementations, opts)
-					Remap("n", "gr", builtin.lsp_references, opts)
-					Remap("n", "<leader>rn", vim.lsp.buf.rename, opts)
-					Remap("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-				end,
-			})
 		end,
 	},
 }
