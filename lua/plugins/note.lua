@@ -19,6 +19,11 @@ return {
 		cmd = "Note",
 		ft = "note",
 		keys = {
+			{
+				"<leader>n", -- [n]ote
+				"<cmd>Note<CR>",
+				mode = "n",
+			},
 			-- You can use telescope to search the current note space:
 			{
 				"<leader>fn", -- [f]ind [n]ote

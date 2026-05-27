@@ -30,18 +30,26 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- -- Autosave when leaving insert
--- vim.api.nvim_create_autocmd("InsertLeave", {
--- 	callback = function()
--- 		vim.cmd("wa")
--- 	end,
--- })
-
 -- Refresh icon highlighting after LSP events
 vim.api.nvim_create_autocmd({ "LspAttach", "DiagnosticChanged" }, {
 	callback = function()
 		vim.schedule(function()
 			require("nvim-web-devicons").refresh()
 		end)
+	end,
+})
+
+-- LSP keymaps
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(e)
+		local opts = { buffer = e.buf }
+		local builtin = require("telescope.builtin")
+		Remap("n", "K", vim.lsp.buf.hover, opts)
+		Remap("n", "gd", vim.lsp.buf.definition, opts)
+		Remap("n", "gD", vim.lsp.buf.declaration, opts)
+		Remap("n", "gi", builtin.lsp_implementations, opts)
+		Remap("n", "gr", builtin.lsp_references, opts)
+		Remap("n", "<leader>rn", vim.lsp.buf.rename, opts)
+		Remap("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 	end,
 })

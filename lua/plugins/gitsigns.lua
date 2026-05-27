@@ -2,6 +2,10 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufEnter",
+		keys = {
+			{ "<leader>gb", "<cmd>Gitsigns blame<CR>", desc = "Git blame" },
+			{ "<leader>gd", "<cmd>Gitsigns diffthis<CR>", desc = "Git diff" },
+		},
 		config = function()
 			require("gitsigns").setup({
 				signs = {

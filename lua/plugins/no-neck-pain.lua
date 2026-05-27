@@ -1,6 +1,16 @@
 return {
 	{
 		"shortcuts/no-neck-pain.nvim",
+		keys = {
+			{
+				"<leader>z",
+				function()
+					vim.cmd("NoNeckPain")
+					vim.cmd("Gitsigns toggle_signs")
+				end,
+				desc = "Zen Mode",
+			},
+		},
 		config = function()
 			require("no-neck-pain").setup({
 				buffers = {
