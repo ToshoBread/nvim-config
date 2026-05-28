@@ -12,7 +12,6 @@ return {
 				library = {
 					vim.env.VIMRUNTIME,
 					vim.fn.stdpath("config"),
-					"C:/Program Files/luaAddons/love2d/library",
 				},
 
 				checkThirdParty = false,
