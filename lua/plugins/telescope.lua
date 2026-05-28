@@ -2,7 +2,6 @@ return {
 	{
 
 		"nvim-telescope/telescope.nvim",
-		lazy = true,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",
@@ -11,45 +10,14 @@ return {
 				build = "make",
 			},
 		},
-		keys = {
-			{
-				"<leader>ff",
-				function()
-					require("telescope.builtin").find_files()
-				end,
-				desc = "Find files",
-			},
-			{
-				"<leader>fw",
-				function()
-					require("telescope.builtin").live_grep()
-				end,
-				desc = "Find regex",
-			},
-			{
-				"<leader>fb",
-				function()
-					require("telescope.builtin").current_buffer_fuzzy_find()
-				end,
-				desc = "Find in buffer",
-			},
-			{
-				"<leader>ft",
-				function()
-					require("telescope.builtin").treesitter()
-				end,
-				desc = "Find Treesitter symbols",
-			},
-			{
-				"<leader>fk",
-				function()
-					require("telescope.builtin").keymaps()
-				end,
-				desc = "Find keymaps",
-			},
-		},
 		config = function()
 			local telescope = require("telescope")
+			local builtin = require("telescope.builtin")
+			Remap("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+			Remap("n", "<leader>fw", builtin.live_grep, { desc = "Find regex" })
+			Remap("n", "<leader>fb", builtin.current_buffer_fuzzy_find, { desc = "Find in buffer" })
+			Remap("n", "<leader>ft", builtin.treesitter, { desc = "Find Treesitter symbols" })
+			Remap("n", "<leader>fk", builtin.keymaps, { desc = "Find keymaps" })
 			telescope.setup({
 				defaults = {
 					border = true,
