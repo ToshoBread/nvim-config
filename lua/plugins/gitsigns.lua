@@ -2,11 +2,9 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufEnter",
-		keys = {
-			{ "<leader>gb", "<cmd>Gitsigns blame<CR>", desc = "Git blame" },
-			{ "<leader>gd", "<cmd>Gitsigns diffthis<CR>", desc = "Git diff" },
-		},
 		config = function()
+			Remap("n", "<leader>gb", "<cmd>Gitsigns blame<CR>", { desc = "Git blame" })
+			Remap("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Git diff" })
 			require("gitsigns").setup({
 				signs = {
 					add = { text = "┃" },

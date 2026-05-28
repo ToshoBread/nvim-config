@@ -2,8 +2,8 @@ return {
 	{
 		"mbbill/undotree",
 		cmd = "UndotreeToggle",
-		keys = {
-			{ "<leader>u", "<cmd>UndotreeToggle<CR>", desc = "Toggle Undotree" },
-		},
+		config = function()
+			Remap("n", "<leader>u", "<cmd>UndotreeToggle<CR>", { desc = "Toggle Undotree" })
+		end,
 	},
 }

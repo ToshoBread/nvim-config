@@ -15,15 +15,15 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Require settings and remaps
+require("core")
+
 require("lazy").setup("plugins", {
 	change_detection = {
 		enabled = false,
 		notify = false,
 	},
 })
-
--- Require settings and remaps
-require("core")
 
 -- Set colorscheme
 vim.cmd.colorscheme("rose-pine")

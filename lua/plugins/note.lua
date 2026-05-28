@@ -2,38 +2,18 @@ return {
 	{
 		"gsuuon/note.nvim",
 		opts = {
-			-- opts.spaces are note workspace parent directories.
-			-- These directories contain a `notes` directory which will be created if missing.
-			-- `<space path>/notes` acts as the note root, so for space '~' the note root is `~/notes`.
-			-- Defaults to { '~' }.
-			spaces = {
-				"~",
-				-- '~/projects/foo'
-			},
-
-			-- Set keymap = false to disable keymapping
-			-- keymap = {
-			--   prefix = '<leader>n'
-			-- }
+			spaces = { "~" },
 		},
 		cmd = "Note",
 		ft = "note",
-		keys = {
-			{
-				"<leader>n", -- [n]ote
-				"<cmd>Note<CR>",
-				mode = "n",
-			},
-			-- You can use telescope to search the current note space:
-			{
-				"<leader>fn", -- [f]ind [n]ote
-				function()
-					require("telescope.builtin").live_grep({
-						cwd = require("note.api").current_note_root(),
-					})
-				end,
-				mode = "n",
-			},
-		},
+		config = function(_, opts)
+			require("note").setup(opts)
+			Remap("n", "<leader>n", "<cmd>Note<CR>", { desc = "Create/Open daily note" })
+			Remap("n", "<leader>fn", function()
+				require("telescope.builtin").live_grep({
+					cwd = require("note.api").current_note_root(),
+				})
+			end, { desc = "Search notes" })
+		end,
 	},
 }
