@@ -22,7 +22,7 @@ vim.opt.smarttab = true
 vim.opt.backspace = { "start", "eol", "indent" }
 
 vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldenable = true
 vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 5

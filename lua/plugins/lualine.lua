@@ -6,7 +6,7 @@ return {
 		config = function()
 			local devicons = require("nvim-web-devicons")
 			local recorder = require("recorder")
-			local screenkey = require("screenkey")
+			-- local screenkey = require("screenkey")
 
 			vim.api.nvim_set_hl(0, "LualineFilenameWithIcon", { bg = "NONE", fg = "#E0DEF4" })
 			-- vim.api.nvim_set_hl(0, "LualineFilenameWithIcon", { bg = "NONE", fg = "#4F3829" })
@@ -70,9 +70,9 @@ return {
 							"%=",
 							component_separators = "",
 						},
-						function()
-							return screenkey.get_keys()
-						end,
+						-- function()
+						-- 	return screenkey.get_keys()
+						-- end,
 					},
 					lualine_x = { "lsp_status" },
 					lualine_y = { recorder.displaySlots, recorder.recordingStatus },

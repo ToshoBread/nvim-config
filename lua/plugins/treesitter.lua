@@ -2,24 +2,28 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
-		branch = "master",
 		build = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"query",
-					"lua",
-					"markdown",
-					"markdown_inline",
-					"typst",
-				},
+			require("nvim-treesitter").setup({})
 
-				sync_install = false,
-				auto_install = true,
-				highlight = { enable = true },
-				indent = { enable = true },
-				modules = {},
-				ignore_install = {},
+			require("nvim-treesitter").install({
+				"query",
+				"lua",
+				"markdown",
+				"markdown_inline",
+				"typst",
+			})
+
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function()
+					pcall(vim.treesitter.start)
+				end,
+			})
+
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function()
+					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				end,
 			})
 		end,
 	},
