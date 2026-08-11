@@ -1,7 +1,6 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		event = "BufEnter",
 		dependencies = {
 			"saghen/blink.cmp",
 			{ "mfussenegger/nvim-jdtls", ft = "java" },
@@ -61,7 +60,7 @@ return {
 				},
 			})
 
-			vim.lsp.set_log_level("OFF")
+			vim.lsp.log.set_level(vim.log.levels.OFF)
 			vim.lsp.enable(installedLSPs)
 		end,
 	},

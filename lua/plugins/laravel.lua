@@ -2,7 +2,6 @@ return {
 	{
 		"adibhanna/laravel.nvim",
 		ft = { "php" },
-		event = "BufRead",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"nvim-lua/plenary.nvim",
