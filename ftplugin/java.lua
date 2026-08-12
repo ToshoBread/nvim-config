@@ -1,14 +1,12 @@
 -- JDTLS (Java LSP) configuration
 local jdtls = require("jdtls")
-local blink = require("blink.cmp")
+local blink_ok, blink = pcall(require, "blink.cmp")
 
 local home = vim.env.HOME -- Get the home directory
+local java_home = vim.env.JAVA_HOME
 
 local mason_dir = vim.fn.stdpath("data") .. "/mason/" -- Linux
--- local mason_dir = home .. "/.local/share/nvim/mason/" -- Linux
--- local mason_dir = "/AppData/Local/nvim-data/mason/" -- Windows
 
--- local root_dir = util.root_pattern(".git", "mvnw", "build.gradle", "pom.xml")(vim.fn.getcwd())
 local root_dir = vim.fs.dirname(vim.fs.find({ ".git", "mvnw", "build.gradle", "pom.xml" }, { upward = true })[1])
 local project_name = vim.fn.fnamemodify(root_dir, ":t")
 local workspace_dir = home .. "/.cache/jdtls/workspace/" .. project_name
@@ -20,13 +18,15 @@ local system_os = vim.fn.has("mac") == 1 and "mac"
 	or "linux"
 
 -- Java debug and test bundles
-local bundles = {
-	vim.fn.glob(mason_dir .. "packages/java-debug-adapter/com.microsoft.java.debug.plugin.jar"),
-}
---     "C:/Program Files (x86)/Java/lib/mysql-connector-j-9.2.0.jar",
--- }
-
-vim.list_extend(bundles, vim.split(vim.fn.glob(mason_dir .. "share/java-test/*.jar", true), "/n"))
+local bundles = {}
+local debug_jar = vim.fn.glob(mason_dir .. "packages/java-debug-adapter/com.microsoft.java.debug.plugin.jar")
+if debug_jar ~= "" then
+	table.insert(bundles, debug_jar)
+end
+local test_jars = vim.fn.glob(mason_dir .. "share/java-test/*.jar", true)
+if test_jars ~= "" then
+	vim.list_extend(bundles, vim.split(test_jars, "/n"))
+end
 
 local jdtls_launcher = vim.fn.glob(mason_dir .. "packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar")
 if jdtls_launcher == "" then
@@ -41,7 +41,7 @@ local config = {
 		"-Dosgi.bundles.defaultStartLevel=4",
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
 		"-Dlog.protocol=true",
-		"-Dlog.level=ALL",
+		"-Dlog.level=WARN",
 		"-javaagent:" .. mason_dir .. "packages/jdtls/lombok.jar",
 		"-Xmx4g",
 		"--add-modules=ALL-SYSTEM",
@@ -59,33 +59,13 @@ local config = {
 		workspace_dir,
 	},
 
-	-- This is the default if not provided, you can remove it. Or adjust as needed.
-	-- One dedicated LSP server & client will be started per unique root_dir
-	-- or vim.fn.getcwd(),
-
-	-- root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "build.gradle", "pom.xml" }),
 	root_dir = root_dir,
 	settings = {
 		java = {
-			-- home = "C:/Program Files/Eclipse Adoptium/jdk-21.0.6.7-hotspot",
-			home = "/usr/lib/jvm/java-24-openjdk",
+			home = java_home,
 			eclipse = { downloadSources = true },
 			configuration = {
 				updateBuildConfiguration = "interactive",
-				runtimes = {
-					-- {
-					--     name = "JavaSE-21",
-					--     path = "C:/Program Files/Eclipse Adoptium/jdk-21.0.6.7-hotspot/",
-					-- },
-					{
-						name = "JavaSE-24",
-						path = "/usr/lib/jvm/java-24-openjdk",
-					},
-				},
-			},
-			project = {
-				sourcePaths = { "src" },
-				outputPath = "bin",
 			},
 			maven = { downloadSources = true },
 			implementationsCodeLens = { enabled = true },
@@ -120,21 +100,15 @@ local config = {
 		},
 	},
 
-	capabilities = vim.tbl_deep_extend(
-		"force",
-		{},
-		vim.lsp.protocol.make_client_capabilities(),
-		blink.get_lsp_capabilities()
-	),
+	capabilities = blink_ok
+			and vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), blink.get_lsp_capabilities())
+		or vim.lsp.protocol.make_client_capabilities(),
 
 	flags = { allow_incremental_sync = true },
 
 	init_options = {
 		bundles = bundles,
-		extendedClientCapabilities = {
-			jdtls.extendedClientCapabilities,
-			projectImportProvider = false,
-		},
+		extendedClientCapabilities = jdtls.extendedClientCapabilities,
 	},
 }
 
