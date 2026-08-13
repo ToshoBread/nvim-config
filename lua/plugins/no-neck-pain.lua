@@ -19,7 +19,7 @@ return {
 					},
 
 					bo = {
-						filetype = "md",
+						filetype = "markdown",
 					},
 				},
 			})

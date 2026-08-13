@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Restore cursor position
 vim.api.nvim_create_autocmd("BufReadPost", {
+	group = vim.api.nvim_create_augroup("restore_cursor", { clear = true }),
 	callback = function(args)
 		local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
 		local line_count = vim.api.nvim_buf_line_count(args.buf)
@@ -32,15 +33,17 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Refresh icon highlighting after LSP events
 vim.api.nvim_create_autocmd({ "LspAttach", "DiagnosticChanged" }, {
+	group = vim.api.nvim_create_augroup("devicons_refresh", { clear = true }),
 	callback = function()
 		vim.schedule(function()
-			require("nvim-web-devicons").refresh()
+			pcall(require("nvim-web-devicons").refresh)
 		end)
 	end,
 })
 
 -- LSP keymaps
 vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("lsp_keymaps", { clear = true }),
 	callback = function(e)
 		local opts = { buffer = e.buf }
 		local builtin = require("telescope.builtin")

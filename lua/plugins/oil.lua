@@ -1,3 +1,19 @@
+local Oilignore = {
+	"..",
+	"lazy-lock",
+	".git",
+	"LICENSE",
+
+	"package",
+	"node_modules",
+	"build",
+	"dist",
+
+	"composer",
+	"vendor",
+	"vscode",
+}
+
 return {
 	{
 		"stevearc/oil.nvim",
@@ -66,8 +82,8 @@ return {
 				view_options = {
 					show_hidden = false,
 					is_hidden_file = function(name, bufnr)
-						-- oilignore table is in init.lua
-						for _, hidden_file in ipairs(oilignore) do
+						-- Oilignore table is defined at the top of this file
+						for _, hidden_file in ipairs(Oilignore) do
 							if
 								name:match("^" .. vim.pesc(hidden_file)) -- Start of the name
 								or name:match(vim.pesc(hidden_file) .. "$") -- End of the name

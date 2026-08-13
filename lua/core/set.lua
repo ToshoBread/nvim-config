@@ -31,7 +31,7 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
+vim.opt.undodir = vim.fn.expand("~/.cache/nvim-undodir")
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false

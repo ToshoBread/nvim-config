@@ -28,12 +28,11 @@ return {
 				},
 				format_on_save = {
 					timeout_ms = 2500,
-					lsp_fallback = true,
 					async = false,
 					lsp_format = "fallback",
 					stop_after_first = true,
 				},
-				log_level = vim.log.levels.DEBUG,
+				log_level = vim.log.levels.WARN,
 			})
 		end,
 	},
