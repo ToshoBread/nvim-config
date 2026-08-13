@@ -42,5 +42,7 @@ return {
 		vim.api.nvim_buf_create_user_command(0, "LspCargoReload", function()
 			reload_workspace(0)
 		end, { desc = "Reload current cargo workspace" })
+
+		Remap("n", "<leader><leader>r", "<CMD>Cargo run<CR>", { desc = "Cargo run" })
 	end,
 }
