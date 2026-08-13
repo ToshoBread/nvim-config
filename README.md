@@ -2,15 +2,14 @@
 
 ## Architecture
 
-`init.lua` → lazy.nvim → `lua/plugins/*.lua` (28 specs) → `lua/core/*.lua`
-(sets, autocmds, native keymaps)
+`init.lua` → `lua/core/*.lua` → lazy.nvim → `lua/plugins/*.lua`
 
-| Directory      | Purpose                                                 |
-| -------------- | ------------------------------------------------------- |
-| `lua/plugins/` | Per-plugin specs, each declares `keys` for lazy loading |
-| `lua/core/`    | Settings, globals, autocmds, motion remaps              |
-| `lsp/`         | LSP server configs (Nvim 0.11+ `vim.lsp.config`)        |
-| `ftplugin/`    | Filetype configs                                        |
+| Directory      | Purpose                                          |
+| -------------- | ------------------------------------------------ |
+| `lua/plugins/` | Per-plugin specs                                 |
+| `lua/core/`    | Settings, globals, autocmds, motion remaps       |
+| `lsp/`         | LSP server configs (Nvim 0.11+ `vim.lsp.config`) |
+| `ftplugin/`    | Filetype configs                                 |
 
 Leader is `<space>`. See each plugin spec for keymaps [`lua/plugins/*.lua`].
 
@@ -66,7 +65,6 @@ Mason-managed servers in `lsp/`. Not nvim-lspconfig.
 - [Nvim-recorder](https://github.com/chrisgrieser/nvim-recorder)
 - [Rainbow-Delimiters](https://github.com/HiPhish/rainbow-delimiters.nvim)
 - [Searchbox](https://github.com/VonHeikemen/searchbox.nvim)
-- [Screenkey](https://github.com/NStefan002/screenkey.nvim) — `<leader>sk`
 - [Tabout](https://github.com/abecodes/tabout.nvim)
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [No-neck-pain](https://github.com/shortcuts/no-neck-pain.nvim) — `<leader>z`
