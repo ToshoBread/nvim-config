@@ -12,18 +12,25 @@ return {
 			local blink = require("blink.cmp")
 
 			local ensureInstalled = {
-				"lua_ls",
-				"marksman",
-				"tinymist",
-				"pylsp",
+				"lua-language-server",
+				"marksman", -- Markdown
+				"tinymist", -- Typst
+				-- "typescript-language-server",
+				-- "python-lsp-server",
 				-- "rust_analyzer",
-				-- "jdtls",
+				-- "roslyn", -- C#
+				-- "jdtls", -- Java
 			}
 
 			local capabilities =
 				vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), blink.get_lsp_capabilities())
 
-			mason.setup()
+			mason.setup({
+				registries = {
+					"github:mason-org/mason-registry",
+					"github:Crashdummyy/mason-registry",
+				},
+			})
 
 			local installedLSPs = vim.iter(registry.get_installed_packages()):fold({}, function(arr, package)
 				if not vim.tbl_contains(package.spec.categories, "Formatter") then
@@ -39,9 +46,9 @@ return {
 
 			registry.refresh(function()
 				for _, lsp in ipairs(ensureInstalled) do
-					if not installedDict[lsp] then
-						registry.get_package(lsp):install()
-						vim.notify(string.format("%s has been installed", lsp))
+					local ok, pkg = pcall(registry.get_package, lsp)
+					if ok and pkg and not installedDict[lsp] then
+						pkg:install()
 					end
 				end
 			end)
