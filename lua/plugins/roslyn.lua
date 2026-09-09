@@ -2,7 +2,10 @@ return {
 	{
 		"seblyng/roslyn.nvim",
 		config = function()
-			require("roslyn").setup()
+			require("roslyn").setup({
+				broad_search = true,
+				lock_target = true,
+			})
 		end,
 	},
 }
