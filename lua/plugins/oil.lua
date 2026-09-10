@@ -3,6 +3,7 @@ local Oilignore = {
 	"lazy-lock",
 	".git",
 	"LICENSE",
+	".luarc",
 
 	"package",
 	"node_modules",
