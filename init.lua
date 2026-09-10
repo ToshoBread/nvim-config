@@ -18,7 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Require settings and remaps
 require("core")
 
-require("lazy").setup("plugins", {
+require("lazy").setup(require("plugin-spec")("plugins"), {
 	change_detection = {
 		enabled = false,
 		notify = false,
