@@ -3,7 +3,6 @@ return {
 		"williamboman/mason.nvim",
 		dependencies = {
 			"saghen/blink.cmp",
-			{ "mfussenegger/nvim-jdtls", ft = "java" },
 		},
 
 		config = function()

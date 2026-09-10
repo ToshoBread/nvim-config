@@ -1,7 +1,6 @@
 return {
 	{
 		"adibhanna/laravel.nvim",
-		ft = { "php" },
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"nvim-lua/plenary.nvim",
